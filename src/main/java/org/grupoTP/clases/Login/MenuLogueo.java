@@ -1,4 +1,4 @@
-package org.grupoTP.Menu;
+package org.grupoTP.clases.Login;
 
 import java.util.Scanner;
 
@@ -16,15 +16,15 @@ public class MenuLogueo {
 
             switch (opcion){
                 case 1:
-                    gestionDeHotel();
+                 //   gestionDeHotel();
                     break;
                 case 2:
-                    gestionDeEmpleados();
+                 //   gestionDeEmpleados();
                     break;
                 case 3:
                 {
-                    gestionReservas=new GestionReservas();
-                    gestionReservas.menuReservas();
+                 //   gestionReservas=new GestionReservas();
+                 //   gestionReservas.menuReservas();
                 }
                     break;
                 case 4:

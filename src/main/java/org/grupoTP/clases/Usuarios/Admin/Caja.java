@@ -1,4 +1,4 @@
-package org.grupoTP.clases.Usuarios.Empleados;
+package org.grupoTP.clases.Usuarios.Admin;
 
 public class Caja {
     private float balance;

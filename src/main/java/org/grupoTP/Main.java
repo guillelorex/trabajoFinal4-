@@ -1,6 +1,6 @@
 package org.grupoTP;
 
-import org.grupoTP.Menu.MenuLogueo;
+import org.grupoTP.clases.Usuarios.Admin.MenuAdmin;
 
 
 public class Main {
@@ -19,9 +19,9 @@ public class Main {
 
         reservas.listar().forEach(System.out::println);
         */
+        MenuAdmin menuAdmin = new MenuAdmin();
 
-        MenuLogueo menuLogueo = new MenuLogueo();
-        menuLogueo.menuPrincipal();
+        menuAdmin.suuitchAdmin();
 
     }
 }

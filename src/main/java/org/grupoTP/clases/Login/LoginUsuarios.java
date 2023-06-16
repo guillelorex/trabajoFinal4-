@@ -1,4 +1,4 @@
-package org.grupoTP.Menu;
+package org.grupoTP.clases.Login;
 
 public class LoginUsuarios {
     //esto le toca a matias

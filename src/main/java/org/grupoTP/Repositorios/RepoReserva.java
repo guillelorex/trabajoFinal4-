@@ -79,7 +79,6 @@ public class RepoReserva implements IntRepository<Reserva> {
                 res.setNombre(reserva.getNombre());
                 res.setApellido(reserva.getApellido());
                 res.setDni(reserva.getDni());
-                res.setTelefono(reserva.getTelefono());
                 break;
             }
         }
