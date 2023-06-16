@@ -1,6 +1,7 @@
 package org.grupoTP.clases.Usuarios.Admin;
 
-import java.sql.SQLOutput;
+import org.grupoTP.clases.Hotel.MenuHotel;
+import org.grupoTP.clases.Login.MenuLogueo;
 import java.util.Scanner;
 
 public class MenuAdmin {
@@ -18,23 +19,30 @@ public class MenuAdmin {
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Cargando Gestion de Hotel");
-                    retraso();
+                    MenuLogueo.retraso();
+                    MenuHotel menuHotel = new MenuHotel();
+                    menuHotel.suuitchHotel();
                 }
                 case 2 -> {
                     System.out.print("Cargando Gestion de Empleados");
-                    retraso();
+                    MenuLogueo.retraso();
                 }
                 case 3 -> {
                     System.out.print("Abriendo Balances");
-                    retraso();
+                    MenuLogueo.retraso();
+                }
+                case 4 -> {
+                    System.out.print("Chequeando Habitaciones");
+                    MenuLogueo.retraso();
                 }
                 case 0 -> {
                     System.out.print("Saliendo del Sistema");
-                    retraso();
+                    MenuLogueo.retraso();
                 }
                 default -> System.out.println("Opcion invalida");
             }
         }while(opcion!=0);
+        scan.close();
     }
 
     public void opcionesMenuAdmin()
@@ -42,19 +50,9 @@ public class MenuAdmin {
         System.out.println("1. Gestion de Hotel");
         System.out.println("2. Gestion de Empleados");
         System.out.println("3. Balances");
+        System.out.println("4. Ver Porcentajes de habitaciones");
         System.out.println("0. Salir");
         System.out.println("Seleccione una opcion: ");
     }
 
-    public void retraso(){
-       try{
-        for (int i = 0; i < 5; i++) {
-            Thread.sleep(300);
-            System.out.print(".");
-            }
-           System.out.println(" ");
-        }catch(Exception e) {
-        System.out.println(e);
-        }
-    }
 }
