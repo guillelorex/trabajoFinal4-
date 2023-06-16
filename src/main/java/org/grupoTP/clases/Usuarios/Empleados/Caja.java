@@ -6,6 +6,8 @@ public class Caja {
     private float egreso;
 
     //region Constructores
+
+    public Caja() {}
     public Caja(float balance, float ingreso, float egreso) {
         this.balance = balance;
         this.ingreso = ingreso;

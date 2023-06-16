@@ -1,8 +1,8 @@
 package org.grupoTP.clases.Usuarios.Empleados;
 
 import org.grupoTP.clases.Usuarios.Persona;
+
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
 
 public class Empleado extends Persona implements Serializable{
@@ -10,16 +10,17 @@ public class Empleado extends Persona implements Serializable{
 
     private int legajo;             ///HACERLO STATIC
     private Area area;
-    private Date horario;
+    private String horario;
     public enum Estado {ACTIVO, BAJA, VACACIONES}
     private Estado estado;
-    private boolean fichaje;
+    private boolean fichaje;  //luego miramos si sirve o lo sacamos
 
     //region constructores
 
     public Empleado(){}
-    public Empleado(String nombre, String apellido, String dni, String telefono, String mail, String password, int legajo, Area area, Date horario, Estado estado, boolean fichaje) {
-        super(nombre, apellido, dni, telefono, mail, password);
+
+    public Empleado(String dni, String password, String mail, String nombre, String apellido, Persona.tipoCuenta tipoCuenta, int legajo, Area area, String horario, Estado estado, boolean fichaje) {
+        super(dni, password, mail, nombre, apellido, tipoCuenta);
         this.legajo = legajo;
         this.area = area;
         this.horario = horario;
@@ -46,11 +47,11 @@ public class Empleado extends Persona implements Serializable{
         this.area = area;
     }
 
-    public Date getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Date horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 
@@ -72,6 +73,7 @@ public class Empleado extends Persona implements Serializable{
     //endregion
 
     //region toString
+
     @Override
     public String toString() {
         return "Empleado{" +
@@ -80,12 +82,16 @@ public class Empleado extends Persona implements Serializable{
                 ", horario=" + horario +
                 ", estado=" + estado +
                 ", fichaje=" + fichaje +
+                ", dni='" + dni + '\'' +
+                ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", dni='" + dni + '\'' +
-                ", telefono='" + telefono + '\''; //endregion
+                '}';
     }
-        //region equals and hashCode
+    //endregion
+
+    //region equals and hashCode
         @Override
         public boolean equals (Object o){
             if (this == o) return true;

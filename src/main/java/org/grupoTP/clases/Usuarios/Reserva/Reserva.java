@@ -1,6 +1,7 @@
 package org.grupoTP.clases.Usuarios.Reserva;
 
 import org.grupoTP.clases.Usuarios.Persona;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -23,8 +24,8 @@ public class Reserva extends Persona implements Serializable{
 
     public Reserva(){}
 
-    public Reserva(String nombre, String apellido, String dni, String telefono, String mail, String password, int nroHabitacion, int nroReserva, String fechaIngreso, String fechaEgreso, clienteEstado estado, clienteTipo tipo, Reserva.pension pension, Reserva.formaPago formaPago) {
-        super(nombre, apellido, dni, telefono, mail, password);
+    public Reserva(String dni, String password, String mail, String nombre, String apellido, Persona.tipoCuenta tipoCuenta, int nroHabitacion, int nroReserva, String fechaIngreso, String fechaEgreso, clienteEstado estado, clienteTipo tipo, Reserva.pension pension, Reserva.formaPago formaPago) {
+        super(dni, password, mail, nombre, apellido, tipoCuenta);
         this.nroHabitacion = nroHabitacion;
         this.nroReserva = nroReserva;
         this.fechaIngreso = fechaIngreso;
@@ -101,21 +102,23 @@ public class Reserva extends Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                ", nroReserva=" + nroReserva + '\'' +
-                ", nroHabitacion=" + nroHabitacion + '\'' +
-                ", fechaIngreso=" + fechaIngreso + '\'' +
-                ", fechaEgreso=" + fechaEgreso + +'\'' +
-                ", estado=" + estado + '\''+
-                ", tipo=" + tipo + '\'' +
-                ", pension=" + pension + '\'' +
-                ", formaPago=" + formaPago + '\'' +
+        return "Reserva{" +
+                "nroHabitacion=" + nroHabitacion +
+                ", nroReserva=" + nroReserva +
+                ", fechaIngreso='" + fechaIngreso + '\'' +
+                ", fechaEgreso='" + fechaEgreso + '\'' +
+                ", estado=" + estado +
+                ", tipo=" + tipo +
+                ", pension=" + pension +
+                ", formaPago=" + formaPago +
+                ", dni='" + dni + '\'' +
+                ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", dni='" + dni + '\'' +
-                ", telefono='" + telefono + '\'' +
                 '}';
     }
+
 
     //endregion
 

@@ -2,32 +2,59 @@ package org.grupoTP.clases.Usuarios;
 
 import java.util.Objects;
 
-public abstract class Persona extends Cuenta{
+public abstract class Persona {
 
-
+    protected String dni;
+    protected String password;
+    protected String mail;
     protected String nombre;
     protected String apellido;
-    protected String dni;
-    protected String telefono;
 
 
+    protected enum tipoCuenta {ADMINISTRADOR, EMPLEADO, CLIENTE};
+
+    protected tipoCuenta tipoCuenta;
 
     //region Constructores
+    public Persona() {}
 
-    public Persona(String nombre, String apellido, String dni, String telefono, String mail, String password) {
+    public Persona(String dni, String password, String mail, String nombre, String apellido, Persona.tipoCuenta tipoCuenta) {
+        this.dni = dni;
+        this.password = password;
+        this.mail = mail;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
-        this.telefono = telefono;
-        this.mail = mail;
-        this.password = password;
+        this.tipoCuenta = tipoCuenta;
     }
 
-    public Persona() {
-    }
     //endregion
 
     //region Getters and Setters
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -44,56 +71,47 @@ public abstract class Persona extends Cuenta{
         this.apellido = apellido;
     }
 
-    public String getDni() {
-        return dni;
+    public Persona.tipoCuenta getTipoCuenta() {
+        return tipoCuenta;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setTipoCuenta(Persona.tipoCuenta tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getMail() {return mail;}
-
-    public void setMail(String mail) {this.mail = mail;}
-
-    public String getPassword() {return password;}
-
-    public void setPassword(String password) {this.password = password;}
     //endregion
 
-    //region toString
+    //region ToString
+
     @Override
     public String toString() {
         return "Persona{" +
-                "nombre='" + nombre + '\'' +
+                "dni='" + dni + '\'' +
+                ", password='" + password + '\'' +
+                ", mail='" + mail + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", dni='" + dni + '\'' +
-                ", mail= '" + mail + '\''+
-                ", password= '" + password + '\'' +
+                ", tipoCuenta=" + tipoCuenta +
                 '}';
     }
+
     //endregion
 
-    //region equals and hashCode
+    //region Equals and HashCode
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Persona persona = (Persona) o;
-        return Objects.equals(dni, persona.dni);
+        return Objects.equals(dni, persona.dni) && Objects.equals(password, persona.password) && Objects.equals(mail, persona.mail) && Objects.equals(nombre, persona.nombre) && Objects.equals(apellido, persona.apellido) && tipoCuenta == persona.tipoCuenta;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(dni);
     }
+
     //endregion
 }
