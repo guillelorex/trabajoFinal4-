@@ -11,7 +11,7 @@ public abstract class Persona {
     protected String apellido;
 
 
-    protected enum tipoCuenta {ADMINISTRADOR, EMPLEADO, CLIENTE};
+    protected enum tipoCuenta {ADMINISTRADOR, RECEPCION, EMPLEADO, CLIENTE};
 
     protected tipoCuenta tipoCuenta;
 

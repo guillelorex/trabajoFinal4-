@@ -6,6 +6,7 @@ import org.grupoTP.clases.Usuarios.Empleados.MenuEmpleados;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
 
 public class GestionHotel {
 
@@ -88,60 +89,79 @@ public class GestionHotel {
     //endregion
 
     //region Dibujar Hotel
-    public void hotelASCII(List<Habitacion> Habitaciones){
+    public void hotelASCII(List<Habitacion> Habitaciones) {
 
-        char izqTecho = 201;
-        char techo = 61;
-        char derTecho = 187;
-        char pared = 186;
+        char izqTecho = '┏';
+        char techo = '━';
+        char derTecho = '┓';
+        char pared = '┃';
         char ventana;
 
         int pisos = contarPisos(Habitaciones);
         int ultimoPiso = contarHabitacionesPorPiso(Habitaciones, contarPisos(Habitaciones));
 
         // Dibujar techo del Hotel
-        System.out.printf("%c",izqTecho);
-        System.out.printf("%c",techo);
+        System.out.printf("%c", izqTecho);
+        System.out.printf("%c", techo);
         for (int i = 0; i < ultimoPiso; i++) {
-            System.out.printf("%c",techo);
-            System.out.printf("%c",techo);
+            System.out.printf("%c", techo);
+            System.out.printf("%c", techo);
         }
-        System.out.printf("%c",derTecho);
+        System.out.printf("%c", derTecho);
 
         System.out.println(); // Salto de línea
 
+        // Invertir el orden de los pisos
+        Collections.reverse(Habitaciones);
+
         // Dibujar pared del hotel
-        for (int i = pisos; i > 0; i--) {
-            System.out.printf("%c",pared); // Borde izquierdo pared
+        int habitacionIndex = 0; // Índice de habitación en la lista
+        for (int i = 1; i <= pisos; i++) {
+            System.out.printf("%c", pared); // Borde izquierdo pared
             // Habitaciones por piso
             int habPorPiso = contarHabitacionesPorPiso(Habitaciones, i);
             for (int j = 0; j < habPorPiso; j++) {
-                switch (Habitaciones.get(j).getEstado()){
-                    case DISPONIBLE ->
-                        {ventana=176;
-                        System.out.printf(" %c",ventana);}
-                    case OCUPADA ->
-                        {ventana=178;
-                        System.out.printf(" %c",ventana);}
-                    case RESERVADA ->
-                        {ventana=177;
-                        System.out.printf(" %c",ventana);}
-                    case MANTENIMIENTO ->
-                        {ventana=219;
-                        System.out.printf(" %c",ventana);}
-                    case FUERA_SERVICIO ->
-                        {ventana=244;
-                        System.out.printf(" %c",ventana);}
+                Habitacion habitacion = Habitaciones.get(habitacionIndex); // Obtener la habitación correcta
+                switch (habitacion.getEstado()) {
+                    case DISPONIBLE -> {
+                        ventana = '░';
+                        System.out.printf(" %c", ventana);
+                    }
+                    case OCUPADA -> {
+                        ventana = '█';
+                        System.out.printf(" %c", ventana);
+                    }
+                    case RESERVADA -> {
+                        ventana = '▒';
+                        System.out.printf(" %c", ventana);
+                    }
+                    case FUERA_SERVICIO -> {
+                        ventana = '■';
+                        System.out.printf(" %c", ventana);
+                    }
+                    case MANTENIMIENTO -> {
+                        ventana = '▌';
+                        System.out.printf(" %c", ventana);
+                    }
                 }
+                habitacionIndex++; // Incrementar el índice de habitación
             }
             System.out.print(" ");
-            System.out.printf("%c",pared); // Borde derecho pared
+            System.out.printf("%c", pared); // Borde derecho pared
+            System.out.println(); // Salto de línea
         }
+
+        // Última línea <gracias chatGPT esta última línea era imposible de sacar bien sin tu ayuda>
+        System.out.printf("%c", pared); // Borde izquierdo pared
+        for (int i = 0; i < ultimoPiso * 2 + 1; i++) {
+            System.out.print(" "); // Espacio en blanco
+        }
+        System.out.printf("%c", pared); // Borde derecho pared
         System.out.println(); // Salto de línea
     }
     //endregion
 
-    // la creación del hotel es crear arreglo de habitaciones.
+    // la creación del hotel es crear una lista de habitaciones.
 
     //cambiar estados SE DEBERÍAN CAMBIAR DESDE LAS RESERVAS
     //PORCENTAJE DE HABITACIONES OCUPADAS

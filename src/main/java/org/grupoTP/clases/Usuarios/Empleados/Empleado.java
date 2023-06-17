@@ -13,7 +13,7 @@ public class Empleado extends Persona implements Serializable{
     private String horario;
     public enum Estado {ACTIVO, BAJA, VACACIONES}
     private Estado estado;
-    private boolean fichaje;  //luego miramos si sirve o lo sacamos
+  //luego miramos si sirve o lo sacamos
 
     //region constructores
 
@@ -25,7 +25,6 @@ public class Empleado extends Persona implements Serializable{
         this.area = area;
         this.horario = horario;
         this.estado = estado;
-        this.fichaje = fichaje;
     }
 
     //endregion
@@ -55,14 +54,6 @@ public class Empleado extends Persona implements Serializable{
         this.horario = horario;
     }
 
-    public boolean isFichaje() {
-        return fichaje;
-    }
-
-    public void setFichaje(boolean fichaje) {
-        this.fichaje = fichaje;
-    }
-
     public Estado getEstado() {
         return estado;
     }
@@ -81,7 +72,6 @@ public class Empleado extends Persona implements Serializable{
                 ", area=" + area +
                 ", horario=" + horario +
                 ", estado=" + estado +
-                ", fichaje=" + fichaje +
                 ", dni='" + dni + '\'' +
                 ", password='" + password + '\'' +
                 ", mail='" + mail + '\'' +
@@ -98,7 +88,7 @@ public class Empleado extends Persona implements Serializable{
             if (o == null || getClass() != o.getClass()) return false;
             if (!super.equals(o)) return false;
             Empleado empleado = (Empleado) o;
-            return legajo == empleado.legajo && fichaje == empleado.fichaje && area == empleado.area && Objects.equals(horario, empleado.horario) && estado == empleado.estado;
+            return legajo == empleado.legajo && area == empleado.area && Objects.equals(horario, empleado.horario) && estado == empleado.estado;
         }
 
         @Override
