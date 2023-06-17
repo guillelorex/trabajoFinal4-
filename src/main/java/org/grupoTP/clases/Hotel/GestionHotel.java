@@ -12,6 +12,7 @@ public class GestionHotel {
 
     List<Habitacion> listaHabitaciones = hotel.listar();
 
+    //region cambiar estado de habitacion
     public void cambiarEstado(Habitacion habitacion){
 
        Scanner scan = new Scanner(System.in);
@@ -44,6 +45,7 @@ public class GestionHotel {
         System.out.println("0- cancelar modificacion");
         System.out.println("Seleccione una opcion: ");
     }
+    //endregion
 
     //region Contadores
 
@@ -75,16 +77,16 @@ public class GestionHotel {
         return contador;
     }
 
-
     //endregion
 
+    //region Dibujar Hotel
     public void hotelASCII(List<Habitacion> Habitaciones){
 
         int izqTecho = 201;
         int techo = 61;
         int derTecho = 187;
         int pared = 186;
-        int ventana = 205;
+        int ventana;
 
         int pisos = contarPisos(Habitaciones);
         int ultimoPiso = contarHabitacionesPorPiso(Habitaciones, contarPisos(Habitaciones));
@@ -100,23 +102,39 @@ public class GestionHotel {
 
         System.out.println(); // Salto de línea
 
-        // Dibujar pared del hotel (sin los bordes)
+        // Dibujar pared del hotel
         for (int i = pisos; i > 0; i--) {
             System.out.printf("%d",pared); // Borde izquierdo pared
             // Habitaciones por piso
             int habPorPiso = contarHabitacionesPorPiso(Habitaciones, i);
             for (int j = 0; j < habPorPiso; j++) {
-                System.out.printf(" %d",ventana);
+                switch (Habitaciones.get(j).getEstado()){
+                    case DISPONIBLE ->
+                        {ventana=176;
+                        System.out.printf(" %d",ventana);}
+                    case OCUPADA ->
+                        {ventana=178;
+                        System.out.printf(" %d",ventana);}
+                    case RESERVADA ->
+                        {ventana=177;
+                        System.out.printf(" %d",ventana);}
+                    case MANTENIMIENTO ->
+                        {ventana=219;
+                        System.out.printf(" %d",ventana);}
+                    case FUERA_SERVICIO ->
+                        {ventana=244;
+                        System.out.printf(" %d",ventana);}
+                }
             }
             System.out.print(" ");
             System.out.printf("%d",pared); // Borde derecho pared
         }
         System.out.println(); // Salto de línea
     }
+    //endregion
 
+    // la creación del hotel en crear arreglo de habitaciones.
 
-    // la creacion de el hotel en crear arreglo de habitaciones.
-
-    //cambiar estados SE DEBERIAN CAMBIAR DESDE LAS RESERVAS
+    //cambiar estados SE DEBERÍAN CAMBIAR DESDE LAS RESERVAS
     //PORCENTAJE DE HABITACIONES OCUPADAS
 }

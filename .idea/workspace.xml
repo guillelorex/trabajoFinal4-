@@ -36,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/laboratorio proyectos/Parcial TaxiRemis"
+    "last_opened_file_path": "C:/laboratorio proyectos/TP final v0.11"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -66,7 +66,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="guillermo" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
