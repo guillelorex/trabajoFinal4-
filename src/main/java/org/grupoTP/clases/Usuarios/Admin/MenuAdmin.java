@@ -1,12 +1,17 @@
 package org.grupoTP.clases.Usuarios.Admin;
 
-import org.grupoTP.clases.Hotel.MenuHotel;
 import org.grupoTP.clases.Login.MenuLogueo;
+import org.grupoTP.clases.Hotel.MenuHotel;
+import org.grupoTP.clases.Usuarios.Empleados.MenuEmpleados;
+
 import java.util.Scanner;
 
 public class MenuAdmin {
 
     public MenuAdmin() {}
+
+    MenuHotel menuHotel = new MenuHotel();
+    MenuEmpleados menuEmpleados = new MenuEmpleados();
 
     public void suuitchAdmin(){
         Scanner scan=new Scanner(System.in);
@@ -20,20 +25,22 @@ public class MenuAdmin {
                 case 1 -> {
                     System.out.print("Cargando Gestion de Hotel");
                     MenuLogueo.retraso();
-                    MenuHotel menuHotel = new MenuHotel();
                     menuHotel.suuitchHotel();
                 }
                 case 2 -> {
                     System.out.print("Cargando Gestion de Empleados");
                     MenuLogueo.retraso();
+                    //menuEmpleados.suuitchEmpleados();
                 }
                 case 3 -> {
                     System.out.print("Abriendo Balances");
                     MenuLogueo.retraso();
+                    //mostrarCajaActual();
                 }
                 case 4 -> {
                     System.out.print("Chequeando Habitaciones");
                     MenuLogueo.retraso();
+                    //mostrarPorcentajes();
                 }
                 case 0 -> {
                     System.out.print("Saliendo del Sistema");
