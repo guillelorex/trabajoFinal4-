@@ -1,4 +1,16 @@
 [ {
+  "numero" : 11,
+  "piso" : 1,
+  "tipo" : "DOB",
+  "cochera" : true,
+  "estado" : "DISPONIBLE"
+}, {
+  "numero" : 12,
+  "piso" : 1,
+  "tipo" : "SIM",
+  "cochera" : false,
+  "estado" : "DISPONIBLE"
+}, {
   "numero" : 13,
   "piso" : 1,
   "tipo" : "DOB",
@@ -35,6 +47,12 @@
   "cochera" : true,
   "estado" : "MANTENIMIENTO"
 }, {
+  "numero" : 31,
+  "piso" : 3,
+  "tipo" : "SUI",
+  "cochera" : false,
+  "estado" : "DISPONIBLE"
+}, {
   "numero" : 32,
   "piso" : 3,
   "tipo" : "DOB",
@@ -45,29 +63,5 @@
   "piso" : 3,
   "tipo" : "DOB",
   "cochera" : false,
-  "estado" : "DISPONIBLE"
-}, {
-  "numero" : 34,
-  "piso" : 3,
-  "tipo" : "SUI",
-  "cochera" : true,
-  "estado" : "DISPONIBLE"
-}, {
-  "numero" : 11,
-  "piso" : 1,
-  "tipo" : "DOB",
-  "cochera" : true,
-  "estado" : "DISPONIBLE"
-}, {
-  "numero" : 12,
-  "piso" : 1,
-  "tipo" : "SIM",
-  "cochera" : false,
-  "estado" : "DISPONIBLE"
-}, {
-  "numero" : 31,
-  "piso" : 3,
-  "tipo" : "SUI",
-  "cochera" : true,
   "estado" : "DISPONIBLE"
 } ]

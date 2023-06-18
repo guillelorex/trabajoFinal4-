@@ -8,6 +8,7 @@ import org.grupoTP.clases.Hotel.Habitacion;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -23,6 +24,7 @@ public class RepoHotel implements IntRepository<Habitacion> {
             try {
                 CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, Habitacion.class);
                 this.listaHabitaciones = mapper.readValue(archivo, collectionType);
+                this.listaHabitaciones.sort(Comparator.comparing(Habitacion::getNumero));
             } catch (IOException e) {
                 this.listaHabitaciones = new ArrayList<>();
             }
@@ -31,6 +33,7 @@ public class RepoHotel implements IntRepository<Habitacion> {
         public void guardar() {
 
             try {
+                this.listaHabitaciones.sort(Comparator.comparing(Habitacion::getNumero));
                 mapper.writerWithDefaultPrettyPrinter().writeValue(archivo, this.listaHabitaciones);
             } catch (IOException e) {
                 throw new RuntimeException(e);

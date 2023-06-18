@@ -3,11 +3,13 @@ package org.grupoTP.Repositorios;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
+import org.grupoTP.clases.Hotel.Habitacion;
 import org.grupoTP.clases.Usuarios.Reserva.Reserva;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -23,6 +25,7 @@ public class RepoReserva implements IntRepository<Reserva> {
         try {
             CollectionType collectionType = mapper.getTypeFactory().constructCollectionType(List.class, Reserva.class);
             this.listaReservas = mapper.readValue(archivo, collectionType);
+            this.listaReservas.sort(Comparator.comparing(Reserva::getNroReserva));
         } catch (IOException e) {
             this.listaReservas = new ArrayList<>();
         }
@@ -31,6 +34,7 @@ public class RepoReserva implements IntRepository<Reserva> {
     public void guardar() {
 
         try {
+            this.listaReservas.sort(Comparator.comparing(Reserva::getNroReserva));
             mapper.writerWithDefaultPrettyPrinter().writeValue(archivo, this.listaReservas);
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -3,6 +3,7 @@ package org.grupoTP.clases.Hotel;
 import org.grupoTP.Repositorios.RepoHotel;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Comparator;
 
@@ -15,6 +16,10 @@ public class GestionHotel {
     //region 1. Mostrar habitaciones
     public void mostrarHabitacionesEnv() {
         hotelASCIIEstado(listaHabitaciones);
+        listarHabitaciones();
+    }
+
+    void listarHabitaciones() {
         for (Habitacion hab : listaHabitaciones) {
             System.out.println(hab);
         }
@@ -25,12 +30,16 @@ public class GestionHotel {
     public void agregarHabitacionEnv(){
         Habitacion hab;
         hotelASCIIBuscar(listaHabitaciones, null);
+
         hab = crearHabitacion();
+
         agregarAListaHabitacion(hab);
         hotel.agregar(hab);
-        hotelASCIIBuscar(listaHabitaciones, hab);
-        System.out.println("Habitación agregada con éxito");
 
+        hotelASCIIBuscar(listaHabitaciones, hab);
+        System.out.println(hab);
+        System.out.println("Habitación agregada con éxito");
+        System.out.println("-----------------------------");
     }
 
     Habitacion crearHabitacion() {
@@ -129,8 +138,13 @@ public class GestionHotel {
 
         }else {
             cambiarEstado(hab);
+
+            hotel.modificar(hab);
+
             hotelASCIIEstado(listaHabitaciones);
             System.out.println(hab);
+            System.out.println("Habitación modificada con éxito");
+            System.out.println("-------------------------------");
         }
     }
      void cambiarEstado(Habitacion habitacion){
@@ -168,10 +182,14 @@ public class GestionHotel {
     public void modificarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
         int numero;
+        Habitacion hab=null;
+        hotelASCIIBuscar(listaHabitaciones,hab);
+        listarHabitaciones();
         System.out.print("\n Ingrese el numero de habitación:");
         numero = scan.nextInt();
-        Habitacion hab=buscadorDeHabitaciones(numero);
+        hab=buscadorDeHabitaciones(numero);
         hotelASCIIBuscar(listaHabitaciones,hab);
+        System.out.println(hab);
         if(hab==null) {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃  No se encontró la habitación ┃");
@@ -179,8 +197,13 @@ public class GestionHotel {
         }else{
             hab=crearHabitacion();
             agregarAListaHabitacion(hab);
-            hotel.agregar(hab);
+
+            hotel.modificar(hab);
+
+            hotelASCIIBuscar(listaHabitaciones,hab);
+            System.out.println(hab);
             System.out.println("Habitación modificada con éxito");
+            System.out.println("-------------------------------");
         }
     }
 
@@ -190,19 +213,35 @@ public class GestionHotel {
     public void eliminarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
         int numero;
+        String opcion;
+        Habitacion hab=null;
+        hotelASCIIBuscar(listaHabitaciones,hab);
+        listarHabitaciones();
+
         System.out.print("\nIngrese el numero de habitación:");
         numero = scan.nextInt();
-        Habitacion hab=buscadorDeHabitaciones(numero);
-        hotelASCIIBuscar(listaHabitaciones,hab);
+
+        hab=buscadorDeHabitaciones(numero);
         if(hab==null) {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃  No se encontró la habitación ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
-            eliminarDeListaHabitacion(hab);
-            hotel.eliminar(hab.getNumero());
             hotelASCIIBuscar(listaHabitaciones,hab);
-            System.out.println("Habitación eliminada con éxito");
+            System.out.println("precione 'b' para borrar o cualquier letra para cancelar");
+            opcion=scan.next();
+            if(Objects.equals(opcion, "b") || Objects.equals(opcion, "B")) {
+                eliminarDeListaHabitacion(hab);
+                hotel.eliminar(hab.getNumero());
+
+                System.out.println("<<(KABOOOOMM)>>");
+                hotelASCIIBuscar(listaHabitaciones,hab);
+                System.out.println("Habitación eliminada con éxito");
+                System.out.println("------------------------------");
+            }else{
+                System.out.println("Operación cancelada");
+                System.out.println("-------------------");
+            }
         }
     }
     void eliminarDeListaHabitacion(Habitacion habitacion){
@@ -308,8 +347,8 @@ public class GestionHotel {
                     case DISPONIBLE -> '░';
                     case OCUPADA -> '█';
                     case RESERVADA -> '▒';
-                    case FUERA_SERVICIO -> '■';
-                    case MANTENIMIENTO -> '▌';
+                    case FUERA_SERVICIO -> 'X';
+                    case MANTENIMIENTO -> '¶';
                 };
                 System.out.printf(" %c", ventana);
                 habitacionIndex--; // Decrementar el índice de habitación
@@ -325,7 +364,9 @@ public class GestionHotel {
             System.out.print(" "); // Espacio en blanco
         }
         System.out.printf(" %c", pared); // Borde derecho pared
-        System.out.println(); // Salto de línea
+        System.out.println();// Salto de línea
+        System.out.println("Referencia: ░ Disponible | █ Ocupada | ▒ Reservada | X Fuera de servicio | ¶ Mantenimiento ");
+        System.out.println(" ");
     }
 
     public void hotelASCIIBuscar(List<Habitacion> habitaciones, Habitacion habitacionBuscada) {
