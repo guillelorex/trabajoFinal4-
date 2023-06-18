@@ -4,7 +4,7 @@ import org.grupoTP.Repositorios.RepoHotel;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.Collections;
+import java.util.Comparator;
 
 public class GestionHotel {
 
@@ -58,7 +58,7 @@ public class GestionHotel {
                 case 4 -> tipoHabitacion = TipoHabitacion.SUI;
                 default -> System.out.println("Opción invalida");
             }
-        }while(tipo==1 || tipo==2 || tipo==3 || tipo==4);
+        }while(!(tipo == 1 || tipo == 2 || tipo == 3 || tipo == 4));
 
         System.out.print("\n La habitación tendrá cochera?¿: s/n");
         do{
@@ -68,7 +68,7 @@ public class GestionHotel {
                 case "n" -> cochera = false;
                 default -> System.out.println("Opción invalida");
             }
-        }while(coche.equals("s") ||coche.equals("n"));
+        }while(!coche.equals("s") && !coche.equals("n"));
 
         estadoHabitacion = Habitacion.EstadoHabitacion.DISPONIBLE; //por defecto (nadie va a crear una habitacion fuera de servicio en vida real)
         return new Habitacion(numero, piso, tipoHabitacion, cochera, estadoHabitacion);
@@ -88,20 +88,22 @@ public class GestionHotel {
 
     public void buscarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
-        int numero;
-        System.out.print("\n Ingrese el numero de habitación:");
-        numero = scan.nextInt();
+        System.out.print("\nIngrese el numero de habitación:");
+        int numero = scan.nextInt();
         Habitacion hab=buscadorDeHabitaciones(numero);
-        hotelASCIIBuscar(listaHabitaciones,hab);
         if(hab==null) {
-            System.out.println("No se encontró la habitación");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No se encontró la habitación ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
+            hotelASCIIBuscar(listaHabitaciones,hab);
             System.out.println(hab);
         }
     }
     Habitacion buscadorDeHabitaciones(int numero){
+        listaHabitaciones.sort(Comparator.comparingInt(Habitacion::getNumero));
         for (Habitacion hab : listaHabitaciones) {
-            if(hab.getNumero()==numero){
+            if (hab.getNumero() == numero) {
                 return hab;
             }
         }
@@ -116,12 +118,14 @@ public class GestionHotel {
         Scanner scan = new Scanner(System.in);
         int numero;
         hotelASCIIEstado(listaHabitaciones);
-        System.out.print("\n Ingrese el numero de habitación:");
+        System.out.print("\nIngrese el numero de habitación:");
         numero = scan.nextInt();
         Habitacion hab = buscadorDeHabitaciones(numero);
         hotelASCIIBuscar(listaHabitaciones, hab);
         if (hab == null) {
-            System.out.println("No se encontró la habitación");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No se encontró la habitación ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
 
         }else {
             cambiarEstado(hab);
@@ -145,7 +149,7 @@ public class GestionHotel {
                 case 5 -> habitacion.setEstado(Habitacion.EstadoHabitacion.FUERA_SERVICIO);
                 default -> System.out.println("Opción invalida");
             }
-        }while(opcion==1 || opcion==2 || opcion==3 || opcion==4 || opcion==5);
+        }while(!(opcion==1 || opcion==2 || opcion==3 || opcion==4 || opcion==5));
     }
 
     void opcionesMenuEstado()
@@ -169,7 +173,9 @@ public class GestionHotel {
         Habitacion hab=buscadorDeHabitaciones(numero);
         hotelASCIIBuscar(listaHabitaciones,hab);
         if(hab==null) {
-            System.out.println("No se encontró la habitación");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No se encontró la habitación ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
             hab=crearHabitacion();
             agregarAListaHabitacion(hab);
@@ -184,12 +190,14 @@ public class GestionHotel {
     public void eliminarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
         int numero;
-        System.out.print("\n Ingrese el numero de habitación:");
+        System.out.print("\nIngrese el numero de habitación:");
         numero = scan.nextInt();
         Habitacion hab=buscadorDeHabitaciones(numero);
         hotelASCIIBuscar(listaHabitaciones,hab);
         if(hab==null) {
-            System.out.println("No se encontró la habitación");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No se encontró la habitación ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
             eliminarDeListaHabitacion(hab);
             hotel.eliminar(hab.getNumero());
@@ -204,25 +212,25 @@ public class GestionHotel {
     //endregion
 
     //region 7. Estadísticas del hotel
-    public void estadisticasHotelEnv(){
+    public void estadisticasHotelEnv() {
         System.out.println("Estadísticas del Hotel");
-        System.out.println("------------------------------------------------");
-        hotelASCIIBuscar(listaHabitaciones,null);
-        System.out.println("Cantidad de pisos: "        + contarPisos(listaHabitaciones));
-        int cant = contarHabitaciones(listaHabitaciones);
+        System.out.println("---------------------------");
+        hotelASCIIBuscar(listaHabitaciones, null);
+        System.out.println("       Cantidad de pisos: " + contarPisos(listaHabitaciones));
+        float cant = contarHabitaciones(listaHabitaciones);
         System.out.println("Cantidad de habitaciones: " + cant);
         System.out.println("------------------------------------------------");
         hotelASCIIEstado(listaHabitaciones);
-        int dis = contarHabitacionesPorEstado(listaHabitaciones,Habitacion.EstadoHabitacion.DISPONIBLE);
-        int ocu = contarHabitacionesPorEstado(listaHabitaciones,Habitacion.EstadoHabitacion.OCUPADA);
-        int res = contarHabitacionesPorEstado(listaHabitaciones,Habitacion.EstadoHabitacion.RESERVADA);
-        int man = contarHabitacionesPorEstado(listaHabitaciones,Habitacion.EstadoHabitacion.MANTENIMIENTO);
-        int fue = contarHabitacionesPorEstado(listaHabitaciones,Habitacion.EstadoHabitacion.FUERA_SERVICIO);
-        System.out.println("Cantidad de habitaciones disponibles "     + ((dis/cant)*100) +"%: " + dis);
-        System.out.println("Cantidad de habitaciones ocupadas"         + ((ocu/cant)*100) +"%: " + ocu);
-        System.out.println("Cantidad de habitaciones reservadas"       + ((res/cant)*100) +"%: " + res);
-        System.out.println("Cantidad de habitaciones en mantenimiento" + ((man/cant)*100) +"%: " + man);
-        System.out.println("Cantidad de habitaciones fuera de servicio"+ ((fue/cant)*100) +"%: " + fue);
+        float dis = contarHabitacionesPorEstado(listaHabitaciones, Habitacion.EstadoHabitacion.DISPONIBLE);
+        float ocu = contarHabitacionesPorEstado(listaHabitaciones, Habitacion.EstadoHabitacion.OCUPADA);
+        float res = contarHabitacionesPorEstado(listaHabitaciones, Habitacion.EstadoHabitacion.RESERVADA);
+        float man = contarHabitacionesPorEstado(listaHabitaciones, Habitacion.EstadoHabitacion.MANTENIMIENTO);
+        float fue = contarHabitacionesPorEstado(listaHabitaciones, Habitacion.EstadoHabitacion.FUERA_SERVICIO);
+        System.out.printf("      Cantidad de habitaciones disponibles: %d  %.2f%%%n", (int) dis, ((dis / cant) * 100));
+        System.out.printf("         Cantidad de habitaciones ocupadas: %d  %.2f%%%n", (int) ocu, ((ocu / cant) * 100));
+        System.out.printf("       Cantidad de habitaciones reservadas: %d  %.2f%%%n", (int) res, ((res / cant) * 100));
+        System.out.printf(" Cantidad de habitaciones en mantenimiento: %d  %.2f%%%n", (int) man, ((man / cant) * 100));
+        System.out.printf("Cantidad de habitaciones fuera de servicio: %d  %.2f%%%n", (int) fue, ((fue / cant) * 100));
         System.out.println("------------------------------------------------");
     }
     //endregion
@@ -268,128 +276,105 @@ public class GestionHotel {
     //endregion
 
     //region Dibujar Hotel
-    public void hotelASCIIEstado(List<Habitacion> Habitaciones) {
-
+    public void hotelASCIIEstado(List<Habitacion> habitaciones) {
         char izqTecho = '┏';
         char techo = '━';
         char derTecho = '┓';
         char pared = '┃';
         char ventana;
 
-        int pisos = contarPisos(Habitaciones);
-        int ultimoPiso = contarHabitacionesPorPiso(Habitaciones, contarPisos(Habitaciones));
+        habitaciones.sort(Comparator.comparing(Habitacion::getNumero));
+        int pisos = contarPisos(habitaciones);
+        int ultimoPiso = contarHabitacionesPorPiso(habitaciones, pisos);
+        int habitacionIndex = habitaciones.size() - 1; // Índice de habitación en la lista
 
         // Dibujar techo del Hotel
-        System.out.printf("%c", izqTecho);
-        System.out.printf("%c", techo);
-        for (int i = 0; i < ultimoPiso; i++) {
-            System.out.printf("%c", techo);
+        System.out.printf("   %c", izqTecho);
+        for (int i = 0; i < ultimoPiso * 2 + 1; i++) {
             System.out.printf("%c", techo);
         }
         System.out.printf("%c", derTecho);
-
         System.out.println(); // Salto de línea
 
-        // Invertir el orden de los pisos
-        Collections.reverse(Habitaciones);
-
-        // Dibujar pared del hotel
-        int habitacionIndex = 0; // Índice de habitación en la lista
+        // Dibujar pisos y habitaciones
         for (int i = 1; i <= pisos; i++) {
-            System.out.printf("%c", pared); // Borde izquierdo pared
+            System.out.printf("   %c", pared); // Borde izquierdo pared
+
             // Habitaciones por piso
-            int habPorPiso = contarHabitacionesPorPiso(Habitaciones, i);
+            int habPorPiso = contarHabitacionesPorPiso(habitaciones, i);
             for (int j = 0; j < habPorPiso; j++) {
-                Habitacion habitacion = Habitaciones.get(habitacionIndex); // Obtener la habitación correcta
-                switch (habitacion.getEstado()) {
-                    case DISPONIBLE -> {
-                        ventana = '░';
-                        System.out.printf(" %c", ventana);
-                    }
-                    case OCUPADA -> {
-                        ventana = '█';
-                        System.out.printf(" %c", ventana);
-                    }
-                    case RESERVADA -> {
-                        ventana = '▒';
-                        System.out.printf(" %c", ventana);
-                    }
-                    case FUERA_SERVICIO -> {
-                        ventana = '■';
-                        System.out.printf(" %c", ventana);
-                    }
-                    case MANTENIMIENTO -> {
-                        ventana = '▌';
-                        System.out.printf(" %c", ventana);
-                    }
-                }
-                habitacionIndex++; // Incrementar el índice de habitación
+                Habitacion habitacion = habitaciones.get(habitacionIndex); // Obtener la habitación correcta
+                ventana = switch (habitacion.getEstado()) {
+                    case DISPONIBLE -> '░';
+                    case OCUPADA -> '█';
+                    case RESERVADA -> '▒';
+                    case FUERA_SERVICIO -> '■';
+                    case MANTENIMIENTO -> '▌';
+                };
+                System.out.printf(" %c", ventana);
+                habitacionIndex--; // Decrementar el índice de habitación
             }
             System.out.print(" ");
             System.out.printf("%c", pared); // Borde derecho pared
             System.out.println(); // Salto de línea
         }
 
-        // Última línea <gracias chatGPT esta última línea era imposible de sacar bien sin tu ayuda>
-        System.out.printf("%c", pared); // Borde izquierdo pared
-        for (int i = 0; i < ultimoPiso * 2 + 1; i++) {
+        // Última línea
+        System.out.printf("   %c", pared); // Borde izquierdo pared
+        for (int i = 0; i < ultimoPiso * 2; i++) {
             System.out.print(" "); // Espacio en blanco
         }
-        System.out.printf("%c", pared); // Borde derecho pared
+        System.out.printf(" %c", pared); // Borde derecho pared
         System.out.println(); // Salto de línea
     }
 
-    public void hotelASCIIBuscar(List<Habitacion> Habitaciones, Habitacion habitacionBuscada) {
+    public void hotelASCIIBuscar(List<Habitacion> habitaciones, Habitacion habitacionBuscada) {
         char izqTecho = '┏';
         char techo = '━';
         char derTecho = '┓';
         char pared = '┃';
         char ventana;
 
-        int pisos = contarPisos(Habitaciones);
-        int ultimoPiso = contarHabitacionesPorPiso(Habitaciones, contarPisos(Habitaciones));
+        habitaciones.sort(Comparator.comparing(Habitacion::getNumero));
+        int pisos = contarPisos(habitaciones);
+        int ultimoPiso = contarHabitacionesPorPiso(habitaciones, pisos);
 
         // Dibujar techo del Hotel
-        System.out.printf("%c", izqTecho);
-        System.out.printf("%c", techo);
-        for (int i = 0; i < ultimoPiso; i++) {
-            System.out.printf("%c", techo);
+        System.out.printf("   %c", izqTecho);
+        for (int i = 0; i < ultimoPiso * 2 + 1; i++) {
             System.out.printf("%c", techo);
         }
         System.out.printf("%c", derTecho);
-
         System.out.println(); // Salto de línea
 
-        // Invertir el orden de los pisos
-        Collections.reverse(Habitaciones);
-
         // Dibujar pared del hotel
-        int habitacionIndex = 0; // Índice de habitación en la lista
-        for (int i = 1; i <= pisos; i++) {
-            System.out.printf("%c", pared); // Borde izquierdo pared
+        int habitacionIndex = habitaciones.size() - 1; // Índice de habitación en la lista
+        for (int i = pisos; i >= 1; i--) {
+            System.out.printf("   %c", pared); // Borde izquierdo pared
             // Habitaciones por piso
-            int habPorPiso = contarHabitacionesPorPiso(Habitaciones, i);
+            int habPorPiso = contarHabitacionesPorPiso(habitaciones, i);
             for (int j = 0; j < habPorPiso; j++) {
-                Habitacion habitacion = Habitaciones.get(habitacionIndex); // Obtener la habitación correcta
-                if (habitacion.getNumero() != habitacionBuscada.getNumero()) {
+                Habitacion habitacion = habitaciones.get(habitacionIndex); // Obtener la habitación correcta
+                if (habitacionBuscada == null || !habitacion.equals(habitacionBuscada)) {
                     ventana = '░';
                     System.out.printf(" %c", ventana);
                 } else {
                     ventana = '█';
                     System.out.printf(" %c", ventana);
                 }
-                habitacionIndex++; // Incrementar el índice de habitación
+                habitacionIndex--; // Decrementar el índice de habitación
             }
             System.out.print(" ");
             System.out.printf("%c", pared); // Borde derecho pared
             System.out.println(); // Salto de línea
         }
 
-        System.out.printf("%c", pared); // Borde izquierdo pared
-        for (int i = 0; i < ultimoPiso * 2 + 1; i++) {
+        // Dibujar última línea
+        System.out.printf("   %c", pared); // Borde izquierdo pared
+        for (int i = 0; i < contarHabitacionesPorPiso(habitaciones, 1) * 2; i++) {
             System.out.print(" "); // Espacio en blanco
         }
-        System.out.printf("%c", pared); // Borde derecho pared
+        System.out.printf(" %c", pared); // Borde derecho pared
         System.out.println(); // Salto de línea
     }
     //endregion

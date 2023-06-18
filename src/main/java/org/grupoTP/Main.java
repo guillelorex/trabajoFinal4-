@@ -17,9 +17,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-
-
-
         // Empleado empleado = new Empleado("34561223", "1234", "guille@gmail.com", "Guille", "Laurencio", , 1, Area.mozos, "10 a 22", Empleado.Estado.ACTIVO, true);
         MenuAdmin menuAdmin = new MenuAdmin();
 

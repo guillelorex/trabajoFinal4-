@@ -12,9 +12,11 @@ public class MenuHotel {
 
     public void suuitchHotel(){
         Scanner scan=new Scanner(System.in);
-        System.out.println("Gestion de Hotel");
         int opcion;
         do{
+            System.out.println(" ");
+            System.out.println("Gestion de Hotel");
+            System.out.println("----------------");
             opcionesMenuHotel();
             opcion=scan.nextInt();
             switch (opcion) {
@@ -72,6 +74,6 @@ public class MenuHotel {
         System.out.println("6. Eliminar Habitacion");
         System.out.println("7. Ver estadísticas del hotel");
         System.out.println("0. Volver a Menu Principal");
-        System.out.println("Seleccione una opcion: ");
+        System.out.print("Seleccione una opción: ");
     }
 }

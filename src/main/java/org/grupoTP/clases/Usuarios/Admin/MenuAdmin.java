@@ -15,9 +15,12 @@ public class MenuAdmin {
 
     public void suuitchAdmin(){
         Scanner scan=new Scanner(System.in);
-        System.out.println("Gestion Administrativa");
         int opcion;
         do{
+            System.out.println(" ");
+            System.out.println("Gestion de Administrativa");
+            System.out.println("-------------------------");
+
             opcionesMenuAdmin();
             opcion=scan.nextInt();
 
@@ -59,7 +62,7 @@ public class MenuAdmin {
         System.out.println("3. Balances");
         System.out.println("4. Ver Porcentajes de habitaciones");
         System.out.println("0. Salir");
-        System.out.println("Seleccione una opcion: ");
+        System.out.print("Seleccione una opción: ");
     }
 
 }
