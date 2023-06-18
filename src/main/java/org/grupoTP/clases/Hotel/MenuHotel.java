@@ -1,10 +1,8 @@
 package org.grupoTP.clases.Hotel;
 
-import java.util.List;
 import java.util.Scanner;
 
 import org.grupoTP.clases.Login.MenuLogueo;
-import org.grupoTP.Repositorios.RepoHotel;
 
 public class MenuHotel {
 
@@ -23,31 +21,37 @@ public class MenuHotel {
                 case 1 -> {
                     System.out.print("Mostrando Habitaciones");
                     MenuLogueo.retraso();
-                    gestionHotel.mostrarHabitaciones();
+                    gestionHotel.mostrarHabitacionesEnv();
                 }
                 case 2 -> {
                     System.out.print("Cargando Constructor de Habitaciones");
                     MenuLogueo.retraso();
+                    gestionHotel.agregarHabitacionEnv();
                 }
                 case 3 -> {
                     System.out.print("Buscando Habitaciones");
                     MenuLogueo.retraso();
+                    gestionHotel.buscarHabitacionEnv();
                 }
                 case 4 -> {
                     System.out.print("Llamando a Equipo de Mantenimiento");
                     MenuLogueo.retraso();
+                    gestionHotel.cambiarEstadoHabitacionEnv();
                 }
                 case 5 -> {
                     System.out.print("Cargando Equipo de Reformas");
                     MenuLogueo.retraso();
+                    gestionHotel.modificarHabitacionEnv();
                 }
                 case 6 -> {
                     System.out.print("Preparando cargas Explosivas");
                     MenuLogueo.retraso();
+                    gestionHotel.eliminarHabitacionEnv();
                 }
                 case 7 -> {
                     System.out.print("Calculando datos");
                     MenuLogueo.retraso();
+                    gestionHotel.estadisticasHotelEnv();
                 }
                 case 0 -> {
                     System.out.print("Volviendo al Menu Administracion");
