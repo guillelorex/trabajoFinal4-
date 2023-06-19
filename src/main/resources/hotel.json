@@ -33,7 +33,7 @@
   "piso" : 2,
   "tipo" : "TRI",
   "cochera" : true,
-  "estado" : "DISPONIBLE"
+  "estado" : "OCUPADA"
 }, {
   "numero" : 23,
   "piso" : 2,
@@ -51,7 +51,7 @@
   "piso" : 3,
   "tipo" : "SUI",
   "cochera" : false,
-  "estado" : "DISPONIBLE"
+  "estado" : "RESERVADA"
 }, {
   "numero" : 32,
   "piso" : 3,

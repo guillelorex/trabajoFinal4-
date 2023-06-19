@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoHotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoPersonal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoReserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoReserva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hotel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hotel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

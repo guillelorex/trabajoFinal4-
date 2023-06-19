@@ -195,10 +195,10 @@ public class GestionHotel {
             System.out.println("┃  No se encontró la habitación ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
-            hab=crearHabitacion();
+            hotel.eliminar(hab.getNumero());  //elimino la habitacion de la lista y la vuelvo a agregar por si se modifico el numero.
+            hab=crearHabitacion();             //la devo eliminar primero porque si agrego algo ya contenido, no lo agrega.
             agregarAListaHabitacion(hab);
-
-            hotel.modificar(hab);
+            hotel.agregar(hab);
 
             hotelASCIIBuscar(listaHabitaciones,hab);
             System.out.println(hab);
@@ -325,7 +325,6 @@ public class GestionHotel {
         habitaciones.sort(Comparator.comparing(Habitacion::getNumero));
         int pisos = contarPisos(habitaciones);
         int ultimoPiso = contarHabitacionesPorPiso(habitaciones, pisos);
-        int habitacionIndex = habitaciones.size() - 1; // Índice de habitación en la lista
 
         // Dibujar techo del Hotel
         System.out.printf("   %c", izqTecho);
@@ -335,10 +334,10 @@ public class GestionHotel {
         System.out.printf("%c", derTecho);
         System.out.println(); // Salto de línea
 
-        // Dibujar pisos y habitaciones
-        for (int i = 1; i <= pisos; i++) {
+        // Dibujar pared del hotel
+        int habitacionIndex = habitaciones.size() - 1; // Índice de habitación en la lista
+        for (int i = pisos; i >= 1; i--) {
             System.out.printf("   %c", pared); // Borde izquierdo pared
-
             // Habitaciones por piso
             int habPorPiso = contarHabitacionesPorPiso(habitaciones, i);
             for (int j = 0; j < habPorPiso; j++) {
@@ -358,13 +357,13 @@ public class GestionHotel {
             System.out.println(); // Salto de línea
         }
 
-        // Última línea
+        // Dibujar última línea
         System.out.printf("   %c", pared); // Borde izquierdo pared
-        for (int i = 0; i < ultimoPiso * 2; i++) {
+        for (int i = 0; i < contarHabitacionesPorPiso(habitaciones, 1) * 2; i++) {
             System.out.print(" "); // Espacio en blanco
         }
         System.out.printf(" %c", pared); // Borde derecho pared
-        System.out.println();// Salto de línea
+        System.out.println(); // Salto de línea
         System.out.println("Referencia: ░ Disponible | █ Ocupada | ▒ Reservada | X Fuera de servicio | ¶ Mantenimiento ");
         System.out.println(" ");
     }
