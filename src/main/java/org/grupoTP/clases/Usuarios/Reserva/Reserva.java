@@ -24,7 +24,7 @@ public class Reserva extends Persona implements Serializable{
 
     public Reserva(){}
 
-    public Reserva(String dni, String password, String mail, String nombre, String apellido, Persona.tipoCuenta tipoCuenta, int nroHabitacion, int nroReserva, String fechaIngreso, String fechaEgreso, clienteEstado estado, clienteTipo tipo, Reserva.pension pension, Reserva.formaPago formaPago) {
+    public Reserva(String dni, String password, String mail, String nombre, String apellido, Persona.TipoCuenta tipoCuenta, int nroHabitacion, int nroReserva, String fechaIngreso, String fechaEgreso, clienteEstado estado, clienteTipo tipo, Reserva.pension pension, Reserva.formaPago formaPago) {
         super(dni, password, mail, nombre, apellido, tipoCuenta);
         this.nroHabitacion = nroHabitacion;
         this.nroReserva = nroReserva;

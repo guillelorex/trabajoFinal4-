@@ -19,15 +19,14 @@ public class Empleado extends Persona implements Serializable{
 
     public Empleado(){}
 
-    public Empleado(String dni, String password, String mail, String nombre, String apellido, Persona.tipoCuenta tipoCuenta, int legajo, Area area, String horario, Estado estado, boolean fichaje) {
+    public Empleado(String dni, String password, String mail, String nombre, String apellido, TipoCuenta tipoCuenta, int legajo, Area area, String horario, Estado estado) {
         super(dni, password, mail, nombre, apellido, tipoCuenta);
         this.legajo = legajo;
         this.area = area;
         this.horario = horario;
         this.estado = estado;
     }
-
-    //endregion
+//endregion
 
     //region getters and setters
     public int getLegajo() {

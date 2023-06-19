@@ -2,45 +2,69 @@ package org.grupoTP.clases.Usuarios.Empleados;
 
 import java.util.Scanner;
 
+import org.grupoTP.clases.Login.MenuLogueo;
+
 public class MenuEmpleados {
 
-    public static void gestionDeEmpleados(){
-        Scanner scanSub2=new Scanner(System.in);
+    public MenuEmpleados() {}
+
+    GestionEmpleados gestionEmpleados = new GestionEmpleados();
+
+    public void suuitchEmpleados(){
+        Scanner scan=new Scanner(System.in);
         System.out.println("Gestion de Personal");
-        int opcionSub2;
+        int opcion;
         do{
-            System.out.println("1. Modificar Empleado");
-            System.out.println("2. Listar Empleado");
-            System.out.println("3. Agregar Empleado");
-            System.out.println("4. Buscar Empleado");
-            System.out.println("5. Eliminar Empleado");
-            System.out.println("6. Volver al Menu Principal");
-            System.out.println("Seleccione una opcion: ");
-            opcionSub2=scanSub2.nextInt();
-            switch (opcionSub2){
-                case 1:
-                    System.out.println("Modificando Empleado....");
-                    break;
-                case 2:
-                    System.out.println("Listando Empleado....");
-                    break;
-                case 3:
-                    System.out.println("Agregando Empleado....");
-                    break;
-                case 4:
-                    System.out.println("Buscando Empleado....");
-                    break;
-                case 5:
-                    System.out.println("Eliminando Empleado....");
-                    break;
-                case 6:
-                    System.out.println("Volviendo al Menu Principal....");
-                    break;
-                default:
-                    System.out.println("Opcion invalida");
-                    break;
+            System.out.println(" ");
+            System.out.println("Gestion de Empleados");
+            System.out.println("--------------------");
+            opcionesMenuEmpleados();
+            opcion=scan.nextInt();
+
+            switch (opcion) {
+                case 1 -> {
+                    System.out.println("Mostrando Empleados");
+                    MenuLogueo.retraso();
+                }
+                case 2 -> {
+                    System.out.println("Inscribiendo Nuevo Empleado");
+                    MenuLogueo.retraso();
+                }
+                case 3 -> {
+                    System.out.println("Buscando Empleados");
+                    MenuLogueo.retraso();
+                }
+                case 4 -> {
+                    System.out.println("Buscando el calendario y plantillas");
+                    MenuLogueo.retraso();
+                }
+                case 5 -> {
+                    System.out.println("Mirando el calendario");
+                    MenuLogueo.retraso();
+                }
+                case 6 -> {
+                    System.out.println("Buscando escusas");
+                    MenuLogueo.retraso();
+                }
+                case 7 -> {
+                    System.out.println("Calculando datos");
+                    MenuLogueo.retraso();
+                }
+                default -> System.out.println("Opción invalida");
             }
-        }while(opcionSub2!=6);
-        scanSub2.close();
+        }while(opcion!=0);
+    }
+
+    public void opcionesMenuEmpleados()
+    {
+        System.out.println("1. Listar Empleados");
+        System.out.println("2. Agregar Empleado");
+        System.out.println("3. Buscar Empleado");
+        System.out.println("4. cambiar el horario de un Empleado");
+        System.out.println("5. Modificar Empleado");
+        System.out.println("6. Despedir Empleado");
+        System.out.println("7. Estadísticas del Personal");
+        System.out.println("0. Volver a Menu Principal");
+        System.out.print("Seleccione una opción: ");
     }
 }

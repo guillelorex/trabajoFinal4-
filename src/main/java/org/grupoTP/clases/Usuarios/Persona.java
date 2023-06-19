@@ -11,14 +11,14 @@ public abstract class Persona {
     protected String apellido;
 
 
-    protected enum tipoCuenta {ADMINISTRADOR, RECEPCION, EMPLEADO, CLIENTE};
+    public enum TipoCuenta {ADMINISTRADOR, RECEPCION, EMPLEADO, CLIENTE};
 
-    protected tipoCuenta tipoCuenta;
+    public TipoCuenta tipoCuenta;
 
     //region Constructores
     public Persona() {}
 
-    public Persona(String dni, String password, String mail, String nombre, String apellido, Persona.tipoCuenta tipoCuenta) {
+    public Persona(String dni, String password, String mail, String nombre, String apellido, TipoCuenta tipoCuenta) {
         this.dni = dni;
         this.password = password;
         this.mail = mail;
@@ -27,7 +27,7 @@ public abstract class Persona {
         this.tipoCuenta = tipoCuenta;
     }
 
-    //endregion
+//endregion
 
     //region Getters and Setters
 
@@ -71,13 +71,15 @@ public abstract class Persona {
         this.apellido = apellido;
     }
 
-    public Persona.tipoCuenta getTipoCuenta() {
+    public TipoCuenta getTipoCuenta() {
         return tipoCuenta;
     }
 
-    public void setTipoCuenta(Persona.tipoCuenta tipoCuenta) {
+    public void setTipoCuenta(TipoCuenta tipoCuenta) {
         this.tipoCuenta = tipoCuenta;
     }
+
+
 
 
     //endregion

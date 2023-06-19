@@ -33,6 +33,7 @@ public class MenuAdmin {
                 case 2 -> {
                     System.out.print("Cargando Gestion de Empleados");
                     MenuLogueo.retraso();
+                    menuEmpleados.suuitchEmpleados();
                     //menuEmpleados.suuitchEmpleados();
                 }
                 case 3 -> {

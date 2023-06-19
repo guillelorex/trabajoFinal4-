@@ -56,10 +56,10 @@ public class MenuHotel {
                     gestionHotel.estadisticasHotelEnv();
                 }
                 case 0 -> {
-                    System.out.print("Volviendo al Menu Administracion");
+                    System.out.print("Volviendo al Menu Administración");
                     MenuLogueo.retraso();
                 }
-                default -> System.out.println("Opcion invalida");
+                default -> System.out.println("Opción invalida");
             }
         }while(opcion!=0);
     }
