@@ -3,7 +3,6 @@ package org.grupoTP.clases.Hotel;
 import org.grupoTP.Repositorios.RepoHotel;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.Comparator;
 
@@ -49,15 +48,15 @@ public class GestionHotel {
         int tipo;
         TipoHabitacion tipoHabitacion = null;
         String coche;
-        boolean cochera = false;
+        boolean cochera=false;
         Habitacion.EstadoHabitacion estadoHabitacion;
 
-        System.out.print("\n Ingrese el numero de habitación:");
+        System.out.print("\n Ingrese el numero de habitación: ");
         numero = scan.nextInt();
         System.out.print("\n Ingrese el piso: ");
         piso = scan.nextInt();
 
-        System.out.print("\n Ingrese el tipo de habitación 1.simple 2.doble 3.triple 4.suite:");
+        System.out.print("\n Ingrese el tipo de habitación 1.simple 2.doble 3.triple 4.suite: ");
         do{
             tipo=scan.nextInt();
             switch (tipo) {
@@ -69,7 +68,7 @@ public class GestionHotel {
             }
         }while(!(tipo == 1 || tipo == 2 || tipo == 3 || tipo == 4));
 
-        System.out.print("\n La habitación tendrá cochera?¿: s/n");
+        System.out.print("\n La habitación tendrá cochera?¿: s/n ");
         do{
             coche=scan.next();
             switch (coche) {
@@ -97,9 +96,12 @@ public class GestionHotel {
 
     public void buscarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
+
+        hotelASCIIEstado(listaHabitaciones);
         System.out.print("\nIngrese el numero de habitación:");
         int numero = scan.nextInt();
         Habitacion hab=buscadorDeHabitaciones(numero);
+
         if(hab==null) {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃  No se encontró la habitación ┃");
@@ -126,7 +128,9 @@ public class GestionHotel {
     public void cambiarEstadoHabitacionEnv() {
         Scanner scan = new Scanner(System.in);
         int numero;
+
         hotelASCIIEstado(listaHabitaciones);
+
         System.out.print("\nIngrese el numero de habitación:");
         numero = scan.nextInt();
         Habitacion hab = buscadorDeHabitaciones(numero);
@@ -182,21 +186,25 @@ public class GestionHotel {
     public void modificarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
         int numero;
-        Habitacion hab=null;
-        hotelASCIIBuscar(listaHabitaciones,hab);
+
+        hotelASCIIBuscar(listaHabitaciones,null);
         listarHabitaciones();
+
         System.out.print("\n Ingrese el numero de habitación:");
         numero = scan.nextInt();
-        hab=buscadorDeHabitaciones(numero);
+
+        Habitacion hab=buscadorDeHabitaciones(numero);
         hotelASCIIBuscar(listaHabitaciones,hab);
-        System.out.println(hab);
+
         if(hab==null) {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃  No se encontró la habitación ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
-            hotel.eliminar(hab.getNumero());  //elimino la habitacion de la lista y la vuelvo a agregar por si se modifico el numero.
-            hab=crearHabitacion();             //la devo eliminar primero porque si agrego algo ya contenido, no lo agrega.
+            System.out.println(hab);
+
+            hotel.eliminar(hab.getNumero());  //elimino la habitacion de la lista y la vuelvo a agregar por si se modificó el número.
+            hab=crearHabitacion();            //la debo eliminar primero porque si agrego algo ya contenido, no lo agrega.
             agregarAListaHabitacion(hab);
             hotel.agregar(hab);
 
@@ -213,15 +221,14 @@ public class GestionHotel {
     public void eliminarHabitacionEnv(){
         Scanner scan = new Scanner(System.in);
         int numero;
-        String opcion;
-        Habitacion hab=null;
-        hotelASCIIBuscar(listaHabitaciones,hab);
+
+        hotelASCIIBuscar(listaHabitaciones,null);
         listarHabitaciones();
 
         System.out.print("\nIngrese el numero de habitación:");
         numero = scan.nextInt();
+        Habitacion hab=buscadorDeHabitaciones(numero);
 
-        hab=buscadorDeHabitaciones(numero);
         if(hab==null) {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃  No se encontró la habitación ┃");
@@ -229,9 +236,10 @@ public class GestionHotel {
         }else{
             hotelASCIIBuscar(listaHabitaciones,hab);
             System.out.println("precione 'b' para borrar o cualquier letra para cancelar");
-            opcion=scan.next();
-            if(Objects.equals(opcion, "b") || Objects.equals(opcion, "B")) {
-                eliminarDeListaHabitacion(hab);
+            String opcion=scan.nextLine();
+            if(opcion.equals("b") || opcion.equals("B")) {
+
+                listaHabitaciones.remove(hab);
                 hotel.eliminar(hab.getNumero());
 
                 System.out.println("<<(KABOOOOMM)>>");
@@ -239,13 +247,10 @@ public class GestionHotel {
                 System.out.println("Habitación eliminada con éxito");
                 System.out.println("------------------------------");
             }else{
-                System.out.println("Operación cancelada");
+                System.out.println("Cargas desactivadas");
                 System.out.println("-------------------");
             }
         }
-    }
-    void eliminarDeListaHabitacion(Habitacion habitacion){
-        listaHabitaciones.remove(habitacion);
     }
 
     //endregion
@@ -256,7 +261,7 @@ public class GestionHotel {
         System.out.println("---------------------------");
         hotelASCIIBuscar(listaHabitaciones, null);
         System.out.println("       Cantidad de pisos: " + contarPisos(listaHabitaciones));
-        float cant = contarHabitaciones(listaHabitaciones);
+        float cant = contarHabitaciones();
         System.out.println("Cantidad de habitaciones: " + cant);
         System.out.println("------------------------------------------------");
         hotelASCIIEstado(listaHabitaciones);
@@ -285,12 +290,8 @@ public class GestionHotel {
         return cont;
     }
 
-    int contarHabitaciones(List<Habitacion> listaHabitaciones){
-        int cont = 0;
-        for (Habitacion hab : listaHabitaciones) {
-            cont++;
-        }
-        return cont;
+    int contarHabitaciones(){
+        return listaHabitaciones.size();
     }
 
     int contarHabitacionesPorPiso(List<Habitacion> listaHabitaciones, int piso){

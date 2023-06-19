@@ -3,7 +3,6 @@ package org.grupoTP.Repositorios;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
-import org.grupoTP.clases.Hotel.Habitacion;
 import org.grupoTP.clases.Usuarios.Empleados.Empleado;
 
 import java.io.File;
@@ -73,11 +72,15 @@ public class RepoPersonal implements IntRepository<Empleado> {
 
         for(Empleado emp: this.listaEmpleados){
             if(emp.getLegajo() == empleado.getLegajo()){
-                emp.setArea(empleado.getArea());
+                emp.setDni(empleado.getDni());
+                emp.setPassword(empleado.getPassword());
+                emp.setMail(empleado.getMail());
                 emp.setNombre(empleado.getNombre());
                 emp.setApellido(empleado.getApellido());
-                emp.setDni(empleado.getDni());
-                emp.setDni(empleado.getDni());
+                emp.setTipoCuenta(empleado.getTipoCuenta());
+                emp.setArea(empleado.getArea());
+                emp.setHorario(empleado.getHorario());
+                emp.setEstado(empleado.getEstado());
                 break;
             }
         }

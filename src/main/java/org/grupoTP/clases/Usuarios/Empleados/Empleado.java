@@ -10,8 +10,9 @@ public class Empleado extends Persona implements Serializable{
 
     private int legajo;             ///HACERLO STATIC
     private Area area;
-    private String horario;
-    public enum Estado {ACTIVO, BAJA, VACACIONES}
+    public enum Horario {MANANA, TARDE, NOCHE}
+    private Horario horario;
+    public enum Estado {ACTIVO, BAJA, SUSPENDIDO,VACACIONES}
     private Estado estado;
   //luego miramos si sirve o lo sacamos
 
@@ -19,7 +20,7 @@ public class Empleado extends Persona implements Serializable{
 
     public Empleado(){}
 
-    public Empleado(String dni, String password, String mail, String nombre, String apellido, TipoCuenta tipoCuenta, int legajo, Area area, String horario, Estado estado) {
+    public Empleado(String dni, String password, String mail, String nombre, String apellido, TipoCuenta tipoCuenta, int legajo, Area area, Horario horario, Estado estado) {
         super(dni, password, mail, nombre, apellido, tipoCuenta);
         this.legajo = legajo;
         this.area = area;
@@ -45,11 +46,11 @@ public class Empleado extends Persona implements Serializable{
         this.area = area;
     }
 
-    public String getHorario() {
+    public Horario getHorario() {
         return horario;
     }
 
-    public void setHorario(String horario) {
+    public void setHorario(Horario horario) {
         this.horario = horario;
     }
 
@@ -66,11 +67,11 @@ public class Empleado extends Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Empleado{" +
-                "legajo=" + legajo +
-                ", area=" + area +
-                ", horario=" + horario +
-                ", estado=" + estado +
+        return "Empleado{" + '\'' +
+                "legajo=" + legajo + '\'' +
+                ", area=" + area + '\'' +
+                ", horario=" + horario + '\'' +
+                ", estado=" + estado + '\'' +
                 ", dni='" + dni + '\'' +
                 ", password='" + password + '\'' +
                 ", mail='" + mail + '\'' +

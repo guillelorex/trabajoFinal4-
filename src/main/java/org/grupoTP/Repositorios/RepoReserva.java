@@ -3,7 +3,6 @@ package org.grupoTP.Repositorios;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
-import org.grupoTP.clases.Hotel.Habitacion;
 import org.grupoTP.clases.Usuarios.Reserva.Reserva;
 
 import java.io.File;

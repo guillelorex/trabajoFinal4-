@@ -1,6 +1,8 @@
 package org.grupoTP.clases.Usuarios.Admin;
 
-public class Caja {
+import java.io.Serializable;
+
+public class Caja implements Serializable{
     private float balance;
     private float ingreso;
     private float egreso;

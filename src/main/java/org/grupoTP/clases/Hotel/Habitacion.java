@@ -10,7 +10,7 @@ public class Habitacion implements Serializable{
 
     private TipoHabitacion tipo;
     private boolean cochera;
-    public enum EstadoHabitacion {DISPONIBLE, OCUPADA, RESERVADA, MANTENIMIENTO, FUERA_SERVICIO};
+    public enum EstadoHabitacion {DISPONIBLE, OCUPADA, RESERVADA, MANTENIMIENTO, FUERA_SERVICIO}
     private EstadoHabitacion estado;
 
     //region Constructores
@@ -70,12 +70,12 @@ public class Habitacion implements Serializable{
     //region toString
     @Override
     public String toString() {
-        return "Habitacion{" +
-                "numero=" + numero +
-                ", piso=" + piso +
-                ", tipo=" + tipo +
-                ", cochera=" + cochera +
-                ", estado=" + estado +
+        return "Habitacion{" +'\'' +
+                "numero=" + numero +'\'' +
+                ", piso=" + piso +'\'' +
+                ", tipo=" + tipo +'\'' +
+                ", cochera=" + cochera +'\'' +
+                ", estado=" + estado +'\'' +
                 '}';
     }
 

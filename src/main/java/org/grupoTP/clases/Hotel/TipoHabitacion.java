@@ -24,9 +24,9 @@ public enum TipoHabitacion {
 
     @Override
     public String toString() {
-        return "Tipohabitacion{" +
+        return "Tipohabitación{" +
                 "tipo='" + tipo + '\'' +
-                ", capacidad=" + capacidad +
+                ", capacidad=" + capacidad +'\'' +
                 '}';
     }
 }

@@ -102,9 +102,9 @@ public class Reserva extends Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Reserva{" +
-                "nroHabitacion=" + nroHabitacion +
-                ", nroReserva=" + nroReserva +
+        return "Reserva{" +'\'' +
+                "nroHabitacion=" + nroHabitacion +'\'' +
+                ", nroReserva=" + nroReserva +'\'' +
                 ", fechaIngreso='" + fechaIngreso + '\'' +
                 ", fechaEgreso='" + fechaEgreso + '\'' +
                 ", estado=" + estado +

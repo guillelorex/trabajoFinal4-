@@ -17,8 +17,10 @@ public class MenuHotel {
             System.out.println(" ");
             System.out.println("Gestion de Hotel");
             System.out.println("----------------");
+
             opcionesMenuHotel();
             opcion=scan.nextInt();
+
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Mostrando Habitaciones");
