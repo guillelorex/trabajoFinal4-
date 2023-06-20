@@ -15,12 +15,8 @@ public enum TipoHabitacion {
         this.capacidad = capacidad;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-    public int getCapacidad() {
-        return capacidad;
-    }
+    public String getTipo() {return tipo;}
+    public int getCapacidad() {return capacidad;}
 
     @Override
     public String toString() {

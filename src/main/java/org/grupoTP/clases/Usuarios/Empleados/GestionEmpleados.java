@@ -408,6 +408,24 @@ public class GestionEmpleados {
     }
     //endregion
 
+    //region Liquidar Sueldos
+    public void liquidarSueldosEnv() {
+        System.out.println("Liquidación de Sueldos");
+        System.out.println("----------------------");
+        System.out.println("Total de empleados: " + contarEmpleados());
+        System.out.println("Total a pagar: $" + calcularSueldos());
+    }
+
+    float calcularSueldos(){
+        float total=0;
+        for (Empleado emp: listaEmpleados) {
+            total+=emp.getArea().getSueldo();
+
+        }
+        return total;
+    }
+    //endregion
+
     //region Dibujar Plantilla
 
     public static void personalASCIIEstado(List<Empleado> empleados) {
