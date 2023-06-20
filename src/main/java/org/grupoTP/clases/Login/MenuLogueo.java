@@ -15,11 +15,13 @@ public class MenuLogueo {
 
         boolean usuarioValido=false;
         boolean contrasenaCorrecta;
+        String contrasena;
+        String mail;
 
         do {
             System.out.println("----Inicio de sesión----");
-            System.out.print("\nIngrese su mail de Usuario: ");
-            String mail = scan.nextLine();
+            System.out.print("\nIngrese su mail de Usuario o '0' para salir: ");
+            mail = scan.nextLine();
 
             Empleado empleadoEncontrado = login.checkUsuarioEmpleado(mail);
             Reserva reservaEncontrada = login.checkUsuarioReserva(mail);
@@ -27,11 +29,11 @@ public class MenuLogueo {
             if (empleadoEncontrado != null) {
                 usuarioValido = true;
                 do {
-                    System.out.print("\nIngrese su contraseña: ");
-                    String contrasena = scan.nextLine();
+                    System.out.print("\nIngrese su contraseña o '0' para salir: ");
+                    contrasena = scan.nextLine();
                     contrasenaCorrecta = login.checkContrasenaEmpleado(empleadoEncontrado, contrasena);
 
-                    if (!contrasenaCorrecta) {
+                    if (!contrasenaCorrecta && !contrasena.equals("0")) {
                         System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                         System.out.println("┃  Contraseña Incorrecta  ┃");
                         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━┛");
@@ -40,15 +42,15 @@ public class MenuLogueo {
                         retraso();
                         login.suuitchUsuario(empleadoEncontrado);
                     }
-                } while (!contrasenaCorrecta);
+                } while (!contrasenaCorrecta || contrasena.equals("0"));
             } else if (reservaEncontrada != null) {
                 usuarioValido = true;
                 do {
-                    System.out.print("\nIngrese su contraseña: ");
-                    String contrasena = scan.nextLine();
+                    System.out.print("\nIngrese su contraseña  o '0' para salir: ");
+                    contrasena = scan.nextLine();
                     contrasenaCorrecta = login.checkContrasenaReserva(reservaEncontrada, contrasena);
 
-                    if (!contrasenaCorrecta) {
+                    if (!contrasenaCorrecta && !contrasena.equals("0")) {
                         System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                         System.out.println("┃  Contraseña Incorrecta  ┃");
                         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━┛");
@@ -58,7 +60,7 @@ public class MenuLogueo {
                         retraso();
                         System.out.println(reservaEncontrada);
                     }
-                } while (!contrasenaCorrecta);
+                } while (!contrasenaCorrecta || !contrasena.equals("0"));
             } else {
                 System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━┓");
                 System.out.println("┃  Usuario Incorrecto  ┃");
@@ -66,7 +68,7 @@ public class MenuLogueo {
                 System.out.println("  ");
                 System.out.println("  ");
             }
-        } while (!usuarioValido);
+        } while (!usuarioValido || mail.equals("0"));
     }
     public static void retraso(){
         try{

@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 
@@ -66,6 +67,7 @@ public class GestionEmpleados {
 
         System.out.print("\n Ingrese el Legajo: ");
         legajo = scan.nextInt();
+        scan.nextLine(); //limpia el buffer
         System.out.print("\n Ingrese el DNI: ");
         dni = scan.nextLine();
         System.out.print("\n Ingrese el mail: ");
@@ -272,6 +274,7 @@ public class GestionEmpleados {
 
         System.out.print("\nIngrese el Legajo del empleado a buscar:");
         legajo = scan.nextInt();
+        scan.nextLine(); // Consumir el carácter de nueva línea (atrapo la basura)
         Empleado emp = buscardorDeEmpleado(legajo);
 
         if (emp == null) {
@@ -414,8 +417,9 @@ public class GestionEmpleados {
     }
     //endregion
 
-    //region Liquidar Sueldos
-    public void liquidarSueldosEnv(Caja cajita) {
+    //region 8. Liquidar Sueldos
+    public void liquidarSueldosEnv() {
+        Caja cajita = new Caja();
         //deserializar la caja aca y en el pago de reservas.
 
         Scanner scan = new Scanner(System.in);
@@ -430,15 +434,21 @@ public class GestionEmpleados {
             System.out.println("Desea Pagar sueldos a todos los empleados? (S/N)");
             String respuesta = scan.nextLine();
             if(respuesta.equalsIgnoreCase("S")){
-                System.out.println("Se ha liquidado el sueldo de todos los empleados");
                 cajita.setEgreso(cajita.getEgreso() + calcularSueldos());
                 cajita.setSaldo(cajita.getSaldo() - calcularSueldos());
+                cajita.setFecha(LocalDateTime.now());
                 LiquidarSueldos();
-                //serializar la caja aca y en reserva
+                System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+                System.out.println("┃  Se ha liquidado el sueldo de todos los empleados  ┃");
+                System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+                //serializar la caja aca y en reserva pago
             }
         }else{
-            System.out.println("No hay suficiente dinero en la caja para pagar los sueldos");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No hay suficiente dinero en la caja para pagar los sueldos  ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }
+        System.out.println(" ");
     }
     float calcularSueldos(){
         float total=0;

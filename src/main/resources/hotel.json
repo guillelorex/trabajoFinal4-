@@ -44,7 +44,7 @@
   "numero" : 24,
   "piso" : 2,
   "tipo" : "TRI",
-  "cochera" : true,
+  "cochera" : false,
   "estado" : "MANTENIMIENTO"
 }, {
   "numero" : 31,
@@ -64,4 +64,10 @@
   "tipo" : "DOB",
   "cochera" : false,
   "estado" : "DISPONIBLE"
+}, {
+  "numero" : 34,
+  "piso" : 3,
+  "tipo" : "SUI",
+  "cochera" : false,
+  "estado" : "RESERVADA"
 } ]

@@ -3,6 +3,7 @@ package org.grupoTP.clases.Usuarios.Admin;
 import org.grupoTP.clases.Login.MenuLogueo;
 import org.grupoTP.clases.Hotel.MenuHotel;
 import org.grupoTP.clases.Usuarios.Empleados.MenuEmpleados;
+import org.grupoTP.clases.Usuarios.Reserva.MenuReservas;
 
 import java.util.Scanner;
 
@@ -12,6 +13,8 @@ public class MenuAdmin {
 
     MenuHotel menuHotel = new MenuHotel();
     MenuEmpleados menuEmpleados = new MenuEmpleados();
+    MenuReservas menuReservas = new MenuReservas();
+    MenuCaja menuCaja = new MenuCaja();
 
     public void suuitchAdmin(){
         Scanner scan=new Scanner(System.in);
@@ -37,14 +40,14 @@ public class MenuAdmin {
                     //menuEmpleados.suuitchEmpleados();
                 }
                 case 3 -> {
-                    System.out.print("Abriendo Balances");
+                    System.out.print("Abriendo Reservas");
                     MenuLogueo.retraso();
-                    //mostrarCajaActual();
+                    menuReservas.suuitchReservas();
                 }
                 case 4 -> {
-                    System.out.print("Chequeando Habitaciones");
+                    System.out.print("Abriendo Balances");
                     MenuLogueo.retraso();
-                    //mostrarPorcentajes();
+                    menuCaja.suuitchCaja();
                 }
                 case 0 -> {
                     System.out.print("Saliendo del Sistema");
@@ -60,8 +63,8 @@ public class MenuAdmin {
     {
         System.out.println("1. Gestion de Hotel");
         System.out.println("2. Gestion de Empleados");
-        System.out.println("3. Balances");
-        System.out.println("4. Ver Porcentajes de habitaciones");
+        System.out.println("3. Gestion de Reservas");
+        System.out.println("3. Balances de Caja");
         System.out.println("0. Salir");
         System.out.print("Seleccione una opción: ");
     }

@@ -1,0 +1,31 @@
+[ {
+  "dni" : "22345123",
+  "password" : "1234",
+  "mail" : "guille@gmail.com",
+  "nombre" : "Guillermo",
+  "apellido" : "Perez",
+  "tipoCuenta" : "CLIENTE",
+  "nroHabitacion" : 22,
+  "nroReserva" : 11,
+  "fechaIngreso" : "2020-12-12",
+  "fechaEgreso" : "2020-12-15",
+  "estado" : "RESERVADO",
+  "tipo" : "JUBILADO",
+  "pension" : "DESAYUNO",
+  "formaPago" : "EFECTIVO"
+}, {
+  "dni" : "22345123",
+  "password" : "1234",
+  "mail" : "guille@gmail.com",
+  "nombre" : "Guillermo",
+  "apellido" : "Perez",
+  "tipoCuenta" : "CLIENTE",
+  "nroHabitacion" : 22,
+  "nroReserva" : 11,
+  "fechaIngreso" : "2020-12-12",
+  "fechaEgreso" : "2020-12-15",
+  "estado" : "RESERVADO",
+  "tipo" : "JUBILADO",
+  "pension" : "DESAYUNO",
+  "formaPago" : "EFECTIVO"
+} ]

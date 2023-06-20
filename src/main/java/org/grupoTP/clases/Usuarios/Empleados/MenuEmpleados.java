@@ -60,7 +60,7 @@ public class MenuEmpleados {
                 case 8 -> {
                     System.out.print("Chequeando Caja");
                     MenuLogueo.retraso();
-                    gestionEmpleados.liquidarSueldosEnv(Caja cajita);
+                    gestionEmpleados.liquidarSueldosEnv();
                 }
                 case 0 -> {System.out.print("Volviendo al Menu Principal");
                     MenuLogueo.retraso();}

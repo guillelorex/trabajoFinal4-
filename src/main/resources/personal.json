@@ -21,15 +21,15 @@
   "horario" : "TARDE",
   "estado" : "VACACIONES"
 }, {
-  "dni" : "12345678",
-  "password" : "5678",
+  "dni" : "223456321",
+  "password" : "1234",
   "mail" : "ana_gomez@gmail.com",
   "nombre" : "Ana",
   "apellido" : "Gomez",
   "tipoCuenta" : "EMPLEADO",
   "legajo" : 2,
-  "area" : "MOZOS",
-  "horario" : "TARDE",
+  "area" : "COCINA",
+  "horario" : "MANANA",
   "estado" : "ACTIVO"
 }, {
   "dni" : "98765432",

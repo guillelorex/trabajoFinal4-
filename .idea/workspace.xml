@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/GestionCaja.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuCaja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Archivos/reservas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/reservas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoPersonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Personal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/personal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hotel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hotel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +50,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/laboratorio proyectos/GuillermoLorenzo",
+    "last_opened_file_path": "C:/laboratorio proyectos/TP final v0.11",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -47,6 +58,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laboratorio proyectos\TP final v0.11\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.grupoTP.clases.Usuarios.Admin" />
     </key>
@@ -67,19 +81,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="guillermo" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>

@@ -192,6 +192,7 @@ public class GestionHotel {
 
         System.out.print("\n Ingrese el numero de habitación:");
         numero = scan.nextInt();
+        scan.nextLine(); //limpio el buffer
 
         Habitacion hab=buscadorDeHabitaciones(numero);
         hotelASCIIBuscar(listaHabitaciones,hab);
@@ -227,6 +228,7 @@ public class GestionHotel {
 
         System.out.print("\nIngrese el numero de habitación:");
         numero = scan.nextInt();
+        scan.nextLine(); //limpio el buffer
         Habitacion hab=buscadorDeHabitaciones(numero);
 
         if(hab==null) {

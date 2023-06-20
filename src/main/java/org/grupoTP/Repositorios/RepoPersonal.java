@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RepoPersonal implements IntRepository<Empleado> {
 
-    private final File archivo = new File("src/main/resources/Personal.json");
+    private final File archivo = new File("src/main/resources/personal.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<Empleado> listaEmpleados;
 
