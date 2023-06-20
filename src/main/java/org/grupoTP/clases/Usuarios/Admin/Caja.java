@@ -3,27 +3,27 @@ package org.grupoTP.clases.Usuarios.Admin;
 import java.io.Serializable;
 
 public class Caja implements Serializable{
-    private float balance;
+    private float saldo;
     private float ingreso;
     private float egreso;
 
     //region Constructores
 
     public Caja() {}
-    public Caja(float balance, float ingreso, float egreso) {
-        this.balance = balance;
+    public Caja(float saldo, float ingreso, float egreso) {
+        this.saldo = saldo;
         this.ingreso = ingreso;
         this.egreso = egreso;
     }
     //endregion
 
     //region Getters and Setters
-    public float getBalance() {
-        return balance;
+    public float getSaldo() {
+        return saldo;
     }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
+    public void setSaldo(float balance) {
+        this.saldo = balance;
     }
 
     public float getIngreso() {
@@ -47,7 +47,7 @@ public class Caja implements Serializable{
     @Override
     public String toString() {
         return "Caja{" +
-                "balance=" + balance +
+                "balance=" + saldo +
                 ", ingreso=" + ingreso +
                 ", egreso=" + egreso +
                 '}';

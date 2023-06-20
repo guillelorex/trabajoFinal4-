@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/TipoHabitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/TipoHabitacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/LoginUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/LoginUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/Area.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/laboratorio proyectos/TP final v0.11",
+    "last_opened_file_path": "C:/laboratorio proyectos/GuillermoLorenzo",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -77,7 +73,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="guillermo" />
                       </list>
                     </value>
                   </entry>

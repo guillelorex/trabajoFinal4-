@@ -2,8 +2,14 @@ package org.grupoTP.clases.Usuarios.Empleados;
 
 import org.grupoTP.Repositorios.RepoPersonal;
 import org.grupoTP.clases.Usuarios.Persona;
+import org.grupoTP.clases.Usuarios.Admin.Caja;
 
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -409,20 +415,65 @@ public class GestionEmpleados {
     //endregion
 
     //region Liquidar Sueldos
-    public void liquidarSueldosEnv() {
-        System.out.println("Liquidación de Sueldos");
-        System.out.println("----------------------");
-        System.out.println("Total de empleados: " + contarEmpleados());
-        System.out.println("Total a pagar: $" + calcularSueldos());
-    }
+    public void liquidarSueldosEnv(Caja cajita) {
+        //deserializar la caja aca y en el pago de reservas.
 
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Liquidación de Sueldos");
+        System.out.println("----------------------------");
+        System.out.println("Total de empleados: " + contarEmpleados());
+        System.out.println("     Total a pagar: " + calcularSueldos() + "$");
+        System.out.println("----------------------------");
+        System.out.println("Saldo de la caja: "+cajita.getSaldo() + "$");
+        if (cajita.getSaldo() >= calcularSueldos()) {
+            System.out.println("Desea Pagar sueldos a todos los empleados? (S/N)");
+            String respuesta = scan.nextLine();
+            if(respuesta.equalsIgnoreCase("S")){
+                System.out.println("Se ha liquidado el sueldo de todos los empleados");
+                cajita.setEgreso(cajita.getEgreso() + calcularSueldos());
+                cajita.setSaldo(cajita.getSaldo() - calcularSueldos());
+                LiquidarSueldos();
+                //serializar la caja aca y en reserva
+            }
+        }else{
+            System.out.println("No hay suficiente dinero en la caja para pagar los sueldos");
+        }
+    }
     float calcularSueldos(){
         float total=0;
         for (Empleado emp: listaEmpleados) {
             total+=emp.getArea().getSueldo();
-
         }
         return total;
+    }
+    void LiquidarSueldos(){
+        LocalDate fechaLocal = LocalDate.now();
+        for (Empleado emp: listaEmpleados) {
+            String rutaArchivo = "src/main/resources/RecibosDeSueldo/Sueldo " + emp.getApellido() + "-" + emp.getNombre() + "-" + fechaLocal + ".txt";
+            imprimirReciboDeSueldo(rutaArchivo,emp);
+        }
+    }
+
+    void imprimirReciboDeSueldo(String rutaArchivo, Empleado empleado) {
+
+        File file = new File(rutaArchivo);
+        try {
+            PrintWriter buffer = new PrintWriter(new FileWriter(file, true));
+
+            buffer.printf("Recibo de Sueldo \n");
+            buffer.printf("-----------------\n");
+            buffer.printf("Nombre: " + empleado.getNombre() + "\n");
+            buffer.printf("Apellido: " + empleado.getApellido() + "\n");
+            buffer.printf("DNI: " + empleado.getDni() + "\n");
+            buffer.printf("Area: " + empleado.getArea() + "\n");
+            buffer.printf("Horario: " + empleado.getHorario() + "\n");
+            buffer.printf("Sueldo: " + empleado.getArea().getSueldo() + "\n");
+
+            buffer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     //endregion
 

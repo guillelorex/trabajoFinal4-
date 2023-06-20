@@ -9,7 +9,7 @@ public class MenuEmpleados {
     public MenuEmpleados() {}
 
     GestionEmpleados gestionEmpleados = new GestionEmpleados();
-
+    //deserializar la caja aca y en reserva
     public void suuitchEmpleados(){
         Scanner scan=new Scanner(System.in);
         int opcion;
@@ -60,7 +60,7 @@ public class MenuEmpleados {
                 case 8 -> {
                     System.out.print("Chequeando Caja");
                     MenuLogueo.retraso();
-                    gestionEmpleados.liquidarSueldosEnv();
+                    gestionEmpleados.liquidarSueldosEnv(Caja cajita);
                 }
                 case 0 -> {System.out.print("Volviendo al Menu Principal");
                     MenuLogueo.retraso();}
