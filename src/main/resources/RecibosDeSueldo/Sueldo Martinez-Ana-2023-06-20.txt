@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Ana
+Apellido: Martinez
+DNI: 34567890
+Area: Area{cargo='limpieza', sueldo=1800.0'}
+Horario: MANANA
+Sueldo: 1800.0

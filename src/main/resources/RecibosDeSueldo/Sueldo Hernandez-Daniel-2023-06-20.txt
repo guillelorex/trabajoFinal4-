@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Daniel
+Apellido: Hernandez
+DNI: 54321098
+Area: Area{cargo='seguridad', sueldo=2000.0'}
+Horario: TARDE
+Sueldo: 2000.0

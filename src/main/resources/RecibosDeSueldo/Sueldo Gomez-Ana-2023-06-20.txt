@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Ana
+Apellido: Gomez
+DNI: 223456321
+Area: Area{cargo='cocina', sueldo=2300.0'}
+Horario: MANANA
+Sueldo: 2300.0

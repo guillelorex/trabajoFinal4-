@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/GestionCaja.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuCaja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Archivos/reservas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/reservas.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoPersonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Repositorios/RepoPersonal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/GestionCaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/GestionCaja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuCaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuCaja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Personal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/personal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hotel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hotel.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +39,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/laboratorio proyectos/TP final v0.11",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/laboratorio proyectos/TP final v0.11&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laboratorio proyectos\TP final v0.11\src\main\resources" />
@@ -81,10 +74,32 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

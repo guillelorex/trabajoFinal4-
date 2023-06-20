@@ -3,6 +3,7 @@ package org.grupoTP.clases.Usuarios.Empleados;
 import org.grupoTP.Repositorios.RepoPersonal;
 import org.grupoTP.clases.Usuarios.Persona;
 import org.grupoTP.clases.Usuarios.Admin.Caja;
+import org.grupoTP.clases.Usuarios.Admin.GestionCaja;
 
 
 import java.io.File;
@@ -17,8 +18,8 @@ import java.util.*;
 public class GestionEmpleados {
 
     RepoPersonal personal = new RepoPersonal();
-
     List<Empleado> listaEmpleados = personal.listar();
+
 
     //region 1. Mostrar Empleados
     public void mostrarEmpleadosEnv() {
@@ -67,6 +68,12 @@ public class GestionEmpleados {
 
         System.out.print("\n Ingrese el Legajo: ");
         legajo = scan.nextInt();
+        if(buscardorDeEmpleado(legajo) != null){
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  La habitación ya existe ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            return null;
+        }
         scan.nextLine(); //limpia el buffer
         System.out.print("\n Ingrese el DNI: ");
         dni = scan.nextLine();
@@ -419,7 +426,7 @@ public class GestionEmpleados {
 
     //region 8. Liquidar Sueldos
     public void liquidarSueldosEnv() {
-        Caja cajita = new Caja();
+        Caja cajita = GestionCaja.abrirCaja();
         //deserializar la caja aca y en el pago de reservas.
 
         Scanner scan = new Scanner(System.in);
@@ -429,14 +436,17 @@ public class GestionEmpleados {
         System.out.println("Total de empleados: " + contarEmpleados());
         System.out.println("     Total a pagar: " + calcularSueldos() + "$");
         System.out.println("----------------------------");
-        System.out.println("Saldo de la caja: "+cajita.getSaldo() + "$");
+        try{
+            System.out.println("Saldo de la caja: " + cajita.getSaldo() + "$");
         if (cajita.getSaldo() >= calcularSueldos()) {
             System.out.println("Desea Pagar sueldos a todos los empleados? (S/N)");
             String respuesta = scan.nextLine();
             if(respuesta.equalsIgnoreCase("S")){
                 cajita.setEgreso(cajita.getEgreso() + calcularSueldos());
                 cajita.setSaldo(cajita.getSaldo() - calcularSueldos());
-                cajita.setFecha(LocalDateTime.now());
+                cajita.setFecha(GestionCaja.localDateAString(LocalDateTime.now()));
+                GestionCaja.imprimirCaja(cajita);
+                GestionCaja.cerrarCaja(cajita);
                 LiquidarSueldos();
                 System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                 System.out.println("┃  Se ha liquidado el sueldo de todos los empleados  ┃");
@@ -447,6 +457,11 @@ public class GestionEmpleados {
             System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
             System.out.println("┃  No hay suficiente dinero en la caja para pagar los sueldos  ┃");
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+        }
+        } catch (NullPointerException e) {
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No hay caja para pagar los sueldos  ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }
         System.out.println(" ");
     }

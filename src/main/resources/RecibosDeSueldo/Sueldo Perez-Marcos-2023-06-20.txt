@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Marcos
+Apellido: Perez
+DNI: 90123456
+Area: Area{cargo='limpieza', sueldo=1800.0'}
+Horario: TARDE
+Sueldo: 1800.0

@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Carlos
+Apellido: Lopez
+DNI: 34567890
+Area: Area{cargo='mantenimiento', sueldo=2000.0'}
+Horario: TARDE
+Sueldo: 2000.0

@@ -56,6 +56,7 @@ public class MenuLogueo {
                         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━┛");
                         System.out.println("  ");
                     }else{
+                        System.out.println("  ");
                         System.out.print("Contraseña correcta. Ingresando al sistema");
                         retraso();
                         System.out.println(reservaEncontrada);

@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Luisa
+Apellido: Gonzalez
+DNI: 87654321
+Area: Area{cargo='cocina', sueldo=2300.0'}
+Horario: NOCHE
+Sueldo: 2300.0

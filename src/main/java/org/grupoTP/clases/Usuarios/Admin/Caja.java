@@ -12,17 +12,17 @@ public class Caja implements Serializable{
     private float ingreso;
     private float egreso;
 
-    private LocalDateTime Fecha;
+    private String fecha;
 
     //region Constructores
 
     public Caja() {}
 
-    public Caja(float saldo, float ingreso, float egreso, LocalDateTime fecha) {
+    public Caja(float saldo, float ingreso, float egreso, String fecha) {
         this.saldo = saldo;
         this.ingreso = ingreso;
         this.egreso = egreso;
-        Fecha = fecha;
+        this.fecha = fecha;
     }
 //endregion
 
@@ -51,9 +51,9 @@ public class Caja implements Serializable{
         this.egreso = egreso;
     }
 
-    public LocalDateTime getFecha() {return Fecha;}
+    public String getFecha() {return fecha;}
 
-    public void setFecha(LocalDateTime fecha) {Fecha = fecha;}
+    public void setFecha(String fecha) {this.fecha = fecha;}
 
     //endregion
 
@@ -62,10 +62,10 @@ public class Caja implements Serializable{
     @Override
     public String toString() {
         return "Caja{" +
-                "saldo=" + saldo +
-                ", ingreso=" + ingreso +
-                ", egreso=" + egreso +
-                ", Fecha=" + Fecha +
+                "saldo=" + saldo +'\'' +
+                ", ingreso=" + ingreso +'\'' +
+                ", egreso=" + egreso +'\'' +
+                ", Fecha=" + fecha +'\'' +
                 '}';
     }
 

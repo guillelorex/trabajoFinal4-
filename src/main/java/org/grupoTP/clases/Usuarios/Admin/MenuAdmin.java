@@ -64,7 +64,7 @@ public class MenuAdmin {
         System.out.println("1. Gestion de Hotel");
         System.out.println("2. Gestion de Empleados");
         System.out.println("3. Gestion de Reservas");
-        System.out.println("3. Balances de Caja");
+        System.out.println("4. Gestion de Caja");
         System.out.println("0. Salir");
         System.out.print("Seleccione una opción: ");
     }

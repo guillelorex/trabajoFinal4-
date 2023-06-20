@@ -24,18 +24,22 @@ public class MenuCaja {
                 case 1 -> {
                     System.out.print("Abriendo Libros");
                     MenuLogueo.retraso();
-                    //menuHotel.suuitchHotel();
+                    gestionCaja.mostrarCajaEnv();
                 }
                 case 2 -> {
                     System.out.print("Buscando Caja de Zapatos vacía");
                     MenuLogueo.retraso();
-                    //menuEmpleados.suuitchEmpleados();
-                    //menuEmpleados.suuitchEmpleados();
+                    gestionCaja.crearCajaEnv();
                 }
                 case 3 -> {
-                    System.out.print("Mirando Resultados");
+                    System.out.print("Modificando Caja");
                     MenuLogueo.retraso();
-                    //mostrarCajaActual();
+                    gestionCaja.modificarCajaEnv();
+                }
+                case 4 -> {
+                    System.out.print("Buscando hojas A4");
+                    MenuLogueo.retraso();
+                    gestionCaja.imprimirCajaEnv();
                 }
                 case 0 -> {
                     System.out.print("Saliendo del Sistema");
@@ -44,7 +48,6 @@ public class MenuCaja {
                 default -> System.out.println("Opcion invalida");
             }
         }while(opcion!=0);
-        scan.close();
     }
 
     public void opcionesMenuAdmin()

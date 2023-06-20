@@ -31,7 +31,6 @@ public class GestionHotel {
         hotelASCIIBuscar(listaHabitaciones, null);
 
         hab = crearHabitacion();
-
         agregarAListaHabitacion(hab);
         hotel.agregar(hab);
 
@@ -53,6 +52,12 @@ public class GestionHotel {
 
         System.out.print("\n Ingrese el numero de habitación: ");
         numero = scan.nextInt();
+        if(buscadorDeHabitaciones(numero) != null){
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  La habitación ya existe ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            return null;
+        }
         System.out.print("\n Ingrese el piso: ");
         piso = scan.nextInt();
 

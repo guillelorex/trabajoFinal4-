@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: David
+Apellido: Rodriguez
+DNI: 23456789
+Area: Area{cargo='valetParking', sueldo=1500.0'}
+Horario: MANANA
+Sueldo: 1500.0

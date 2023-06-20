@@ -1,0 +1,8 @@
+Recibo de Sueldo 
+-----------------
+Nombre: Julia
+Apellido: Gomez
+DNI: 54321098
+Area: Area{cargo='limpieza', sueldo=1800.0'}
+Horario: NOCHE
+Sueldo: 1800.0
