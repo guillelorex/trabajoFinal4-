@@ -424,6 +424,6 @@ public class GestionHotel {
 
     // la creación del hotel es crear una lista de habitaciones.
 
-    //cambiar estados SE DEBERÍAN CAMBIAR DESDE LAS RESERVAS
-    //PORCENTAJE DE HABITACIONES OCUPADAS
+    //cambiar estados SE DEBERÍAN también CAMBIAR DESDE LAS RESERVAS
+
 }

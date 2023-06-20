@@ -23,40 +23,47 @@ public class MenuEmpleados {
 
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("Mostrando Empleados");
+                    System.out.print("Mostrando Empleados");
                     MenuLogueo.retraso();
                     gestionEmpleados.mostrarEmpleadosEnv();
                 }
                 case 2 -> {
-                    System.out.println("Inscribiendo Nuevo Empleado");
+                    System.out.print("Inscribiendo Nuevo Empleado");
                     MenuLogueo.retraso();
                     gestionEmpleados.agregarEmpleadoEnv();
                 }
                 case 3 -> {
-                    System.out.println("Buscando Empleados");
+                    System.out.print("Buscando Empleados");
                     MenuLogueo.retraso();
                     gestionEmpleados.buscarEmpleadoEnv();
                 }
                 case 4 -> {
-                    System.out.println("Buscando fechas y plantillas");
+                    System.out.print("Buscando fechas y plantillas");
                     MenuLogueo.retraso();
                     gestionEmpleados.cambiarEstadoEmpleadoEnv();
                 }
                 case 5 -> {
-                    System.out.println("Mirando el calendario");
+                    System.out.print("Mirando el calendario");
                     MenuLogueo.retraso();
                     gestionEmpleados.modificarEmpleadoEnv();
                 }
                 case 6 -> {
-                    System.out.println("Buscando escusas");
+                    System.out.print("Buscando escusas");
                     MenuLogueo.retraso();
                     gestionEmpleados.eliminarEmpleadoEnv();
                 }
                 case 7 -> {
-                    System.out.println("Calculando datos");
+                    System.out.print("Calculando datos");
                     MenuLogueo.retraso();
                     gestionEmpleados.estadisticasEmpleadosEnv();
                 }
+                case 8 -> {
+                    System.out.print("Chequeando Caja");
+                    MenuLogueo.retraso();
+                    gestionEmpleados.estadisticasEmpleadosEnv();
+                }
+                case 0 -> {System.out.print("Volviendo al Menu Principal");
+                    MenuLogueo.retraso();}
                 default -> System.out.println("Opción invalida");
             }
         }while(opcion!=0);
@@ -71,6 +78,7 @@ public class MenuEmpleados {
         System.out.println("5. Modificar Empleado");
         System.out.println("6. Despedir Empleado");
         System.out.println("7. Estadísticas del Personal");
+        System.out.println("8. Liquidar sueldos");
         System.out.println("0. Volver a Menu Principal");
         System.out.print("Seleccione una opción: ");
     }
