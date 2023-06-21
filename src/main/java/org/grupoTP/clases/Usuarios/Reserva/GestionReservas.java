@@ -488,6 +488,7 @@ public class GestionReservas {
     void cobrarHabitacionEnv() {
         Scanner scan = new Scanner(System.in);
 
+        listarReservas();
         System.out.println("Ingrese el numero de reserva");
         int numReserva = scan.nextInt();
 

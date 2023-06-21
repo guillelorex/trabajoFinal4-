@@ -1,0 +1,17 @@
+ 
+     Factura del Hotel
+----------------------------------
+     Habitacion nº: 22
+Tipo de Habitacion: triple
+           Cochera: true
+           Pension: Pension{'pension='desayuno', valor=20.0'}
+           Incluye: desayuno
+----------------------------------
+valor de habitacion triple: 100.0$
+valor de pension desayuno: 20.0$
+valor de cochera: 20$
+Cantidad de noches: 4
+a pagar por noche: 120.020$
+----------------------------------
+TOTAL: 560.0$
+Medio de pago : EFECTIVO

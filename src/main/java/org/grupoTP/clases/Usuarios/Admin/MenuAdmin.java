@@ -50,9 +50,10 @@ public class MenuAdmin {
                     LoginUsuarios.retraso();
                     menuCaja.suuitchCaja();
                 }
-                case 0 ->
+                case 0 ->{
                     System.out.print("Nos vemos Jefe");
-
+                    LoginUsuarios.retraso();
+                }
                 default -> System.out.println("Opcion invalida");
             }
         }while(opcion!=0);

@@ -24,42 +24,42 @@ public class MenuReservas {
 
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("Mirando el llavero");
+                    System.out.print("Mirando el llavero");
                     LoginUsuarios.retraso();
                     gestionReservas.mostrarReservasEnv();
                 }
                 case 2 -> {
-                    System.out.println("Abriendo los libros");
+                    System.out.print("Abriendo los libros");
                     LoginUsuarios.retraso();
                     gestionReservas.agregarReservaEnv();
                 }
                 case 3 -> {
-                    System.out.println("Buscando en los libros");
+                    System.out.print("Buscando en los libros");
                     LoginUsuarios.retraso();
                     gestionReservas.buscarReservaEnv();
                 }
                 case 4 -> {
-                    System.out.println("Salude al cliente antes antes de continuar");
+                    System.out.print("Salude al cliente antes antes de continuar");
                     LoginUsuarios.retraso();
                     gestionReservas.cambiarEstadoReservaEnv();
                 }
                 case 5 -> {
-                    System.out.println("Buscando datos de la reserva");
+                    System.out.print("Buscando datos de la reserva");
                     LoginUsuarios.retraso();
                     gestionReservas.modificarReservaEnv();
                 }
                 case 6 -> {
-                    System.out.println("Buscando datos de la reserva y el borrador");
+                    System.out.print("Buscando datos de la reserva y el borrador");
                     LoginUsuarios.retraso();
                     gestionReservas.borrarReservaEnv();
                 }
                 case 7 -> {
-                    System.out.println("Calculando datos");
+                    System.out.print("Calculando datos");
                     LoginUsuarios.retraso();
                     gestionHotel.estadisticasHotelEnv();
                 }
                 case 8 -> {
-                    System.out.println("Buscando la Caja");
+                    System.out.print("Buscando la Caja");
                     LoginUsuarios.retraso();
                     gestionReservas.cobrarHabitacionEnv();
                 }
@@ -69,7 +69,7 @@ public class MenuReservas {
                 }
                 default -> System.out.println("Opcion invalida");
             }
-        }while(opcion!=7);
+        }while(opcion!=0);
     }
 
     public void opcionesMenuReservas()
@@ -83,6 +83,6 @@ public class MenuReservas {
         System.out.println("7. Ver estadísticas del hotel");
         System.out.println("8. Cobrar Reservacion");
         System.out.println("0. Volver al Menu Principal");
-        System.out.println("Seleccione una opcion: ");
+        System.out.print("Seleccione una opcion: ");
     }
 }

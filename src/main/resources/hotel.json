@@ -3,13 +3,13 @@
   "piso" : 1,
   "tipo" : "DOB",
   "cochera" : true,
-  "estado" : "DISPONIBLE"
+  "estado" : "RESERVADA"
 }, {
   "numero" : 12,
   "piso" : 1,
   "tipo" : "SIM",
   "cochera" : false,
-  "estado" : "DISPONIBLE"
+  "estado" : "OCUPADA"
 }, {
   "numero" : 13,
   "piso" : 1,
@@ -21,7 +21,7 @@
   "piso" : 1,
   "tipo" : "SIM",
   "cochera" : false,
-  "estado" : "FUERA_SERVICIO"
+  "estado" : "MANTENIMIENTO"
 }, {
   "numero" : 21,
   "piso" : 2,
@@ -39,7 +39,7 @@
   "piso" : 2,
   "tipo" : "TRI",
   "cochera" : true,
-  "estado" : "DISPONIBLE"
+  "estado" : "OCUPADA"
 }, {
   "numero" : 24,
   "piso" : 2,
@@ -57,7 +57,7 @@
   "piso" : 3,
   "tipo" : "DOB",
   "cochera" : false,
-  "estado" : "OCUPADA"
+  "estado" : "FUERA_SERVICIO"
 }, {
   "numero" : 33,
   "piso" : 3,
