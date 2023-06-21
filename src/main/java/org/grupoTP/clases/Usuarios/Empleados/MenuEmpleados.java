@@ -2,7 +2,7 @@ package org.grupoTP.clases.Usuarios.Empleados;
 
 import java.util.Scanner;
 
-import org.grupoTP.clases.Login.MenuLogueo;
+import org.grupoTP.clases.Login.LoginUsuarios;
 
 public class MenuEmpleados {
 
@@ -24,46 +24,46 @@ public class MenuEmpleados {
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Mostrando Empleados");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.mostrarEmpleadosEnv();
                 }
                 case 2 -> {
                     System.out.print("Inscribiendo Nuevo Empleado");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.agregarEmpleadoEnv();
                 }
                 case 3 -> {
                     System.out.print("Buscando Empleados");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.buscarEmpleadoEnv();
                 }
                 case 4 -> {
                     System.out.print("Buscando fechas y plantillas");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.cambiarEstadoEmpleadoEnv();
                 }
                 case 5 -> {
                     System.out.print("Mirando el calendario");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.modificarEmpleadoEnv();
                 }
                 case 6 -> {
                     System.out.print("Buscando escusas");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.eliminarEmpleadoEnv();
                 }
                 case 7 -> {
                     System.out.print("Calculando datos");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.estadisticasEmpleadosEnv();
                 }
                 case 8 -> {
                     System.out.print("Chequeando Caja");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionEmpleados.liquidarSueldosEnv();
                 }
                 case 0 -> {System.out.print("Volviendo al Menu Principal");
-                    MenuLogueo.retraso();}
+                    LoginUsuarios.retraso();}
                 default -> System.out.println("Opción invalida");
             }
         }while(opcion!=0);

@@ -1,5 +1,6 @@
 package org.grupoTP.clases.Usuarios.Admin;
 
+import org.grupoTP.clases.Login.LoginUsuarios;
 import org.grupoTP.clases.Login.MenuLogueo;
 import org.grupoTP.clases.Hotel.MenuHotel;
 import org.grupoTP.clases.Usuarios.Empleados.MenuEmpleados;
@@ -30,29 +31,28 @@ public class MenuAdmin {
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Cargando Gestion de Hotel");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     menuHotel.suuitchHotel();
                 }
                 case 2 -> {
                     System.out.print("Cargando Gestion de Empleados");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     menuEmpleados.suuitchEmpleados();
                     //menuEmpleados.suuitchEmpleados();
                 }
                 case 3 -> {
                     System.out.print("Abriendo Reservas");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     menuReservas.suuitchReservas();
                 }
                 case 4 -> {
                     System.out.print("Abriendo Balances");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     menuCaja.suuitchCaja();
                 }
-                case 0 -> {
-                    System.out.print("Saliendo del Sistema");
-                    MenuLogueo.retraso();
-                }
+                case 0 ->
+                    System.out.print("Nos vemos Jefe");
+
                 default -> System.out.println("Opcion invalida");
             }
         }while(opcion!=0);

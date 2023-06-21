@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="">
+    <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="caja hecho falta liquidar habitacion">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/Pension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/GestionHotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/MenuHotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/MenuHotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/TipoHabitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Hotel/TipoHabitacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/LoginUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/LoginUsuarios.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/Caja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/GestionCaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/GestionCaja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuCaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Admin/MenuCaja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/MenuEmpleados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/Reserva.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -67,6 +72,14 @@
       <option name="presentableId" value="Default" />
       <updated>1686874513874</updated>
     </task>
+    <task id="LOCAL-00001" summary="caja hecho falta liquidar habitacion">
+      <created>1687301703063</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687301703063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,7 +93,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="guillermo" />
                       </list>
                     </value>
                   </entry>
@@ -91,6 +104,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="caja hecho falta liquidar habitacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="caja hecho falta liquidar habitacion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,6 @@
 package org.grupoTP.clases.Usuarios.Admin;
 
+import org.grupoTP.clases.Login.LoginUsuarios;
 import org.grupoTP.clases.Login.MenuLogueo;
 
 import java.util.Scanner;
@@ -23,27 +24,27 @@ public class MenuCaja {
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Abriendo Libros");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionCaja.mostrarCajaEnv();
                 }
                 case 2 -> {
                     System.out.print("Buscando Caja de Zapatos vacía");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionCaja.crearCajaEnv();
                 }
                 case 3 -> {
                     System.out.print("Modificando Caja");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionCaja.modificarCajaEnv();
                 }
                 case 4 -> {
                     System.out.print("Buscando hojas A4");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionCaja.imprimirCajaEnv();
                 }
                 case 0 -> {
                     System.out.print("Saliendo del Sistema");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                 }
                 default -> System.out.println("Opcion invalida");
             }

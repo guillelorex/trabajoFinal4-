@@ -22,6 +22,8 @@ public class MenuLogueo {
             System.out.println("----Inicio de sesión----");
             System.out.print("\nIngrese su mail de Usuario o '0' para salir: ");
             mail = scan.nextLine();
+            if (mail.equals("0"))
+                break; // Salir del bucle si se ingresa '0'
 
             Empleado empleadoEncontrado = login.checkUsuarioEmpleado(mail);
             Reserva reservaEncontrada = login.checkUsuarioReserva(mail);
@@ -31,18 +33,20 @@ public class MenuLogueo {
                 do {
                     System.out.print("\nIngrese su contraseña o '0' para salir: ");
                     contrasena = scan.nextLine();
+                    if (contrasena.equals("0"))
+                        break; // Salir del bucle si se ingresa '0'
                     contrasenaCorrecta = login.checkContrasenaEmpleado(empleadoEncontrado, contrasena);
 
-                    if (!contrasenaCorrecta && !contrasena.equals("0")) {
+                    if (!contrasenaCorrecta) {
                         System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                         System.out.println("┃  Contraseña Incorrecta  ┃");
                         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━┛");
                     }else{
                         System.out.print("Contraseña correcta. Ingresando al sistema");
-                        retraso();
+                        LoginUsuarios.retraso();
                         login.suuitchUsuario(empleadoEncontrado);
                     }
-                } while (!contrasenaCorrecta || contrasena.equals("0"));
+                } while (!contrasenaCorrecta);
             } else if (reservaEncontrada != null) {
                 usuarioValido = true;
                 do {
@@ -58,7 +62,7 @@ public class MenuLogueo {
                     }else{
                         System.out.println("  ");
                         System.out.print("Contraseña correcta. Ingresando al sistema");
-                        retraso();
+                        LoginUsuarios.retraso();
                         System.out.println(reservaEncontrada);
                     }
                 } while (!contrasenaCorrecta || !contrasena.equals("0"));
@@ -69,19 +73,11 @@ public class MenuLogueo {
                 System.out.println("  ");
                 System.out.println("  ");
             }
-        } while (!usuarioValido || mail.equals("0"));
+        } while (!usuarioValido);
+        System.out.print("Saliendo del Sistema");
+        LoginUsuarios.retraso();
     }
-    public static void retraso(){
-        try{
-            for (int i = 0; i < 5; i++) {
-                Thread.sleep(300);
-                System.out.print(".");
-            }
-            System.out.println(" ");
-        }catch(Exception e) {
-            System.out.println(e);
-        }
-    }
+
 
 
 

@@ -1,6 +1,9 @@
 package org.grupoTP.clases.Usuarios.Reserva;
 
+
 import org.grupoTP.Repositorios.RepoReserva;
+import org.grupoTP.clases.Hotel.GestionHotel;
+import org.grupoTP.clases.Hotel.Habitacion;
 import org.grupoTP.clases.Usuarios.Admin.Caja;
 import org.grupoTP.clases.Usuarios.Admin.GestionCaja;
 import org.grupoTP.clases.Usuarios.Empleados.Empleado;
@@ -11,6 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Duration;
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,6 +22,7 @@ public class GestionReservas {
 
     RepoReserva reservas= new RepoReserva();
     List<Reserva> listaReserva=reservas.listar();
+
 
     //CONSTRUCTOR
     public GestionReservas() {}
@@ -169,10 +174,10 @@ public class GestionReservas {
             opcion = scan.nextInt();
 
             switch (opcion) {
-                case 1 -> reservacion.setPension(Reserva.pension.ALLINCLUSIVE);
-                case 2 -> reservacion.setPension(Reserva.pension.COMPLETA);
-                case 3 -> reservacion.setPension(Reserva.pension.MEDIA);
-                case 4 -> reservacion.setPension(Reserva.pension.DESAYUNO);
+                case 1 -> reservacion.setPension(Pension.ALLINCLUSIVE);
+                case 2 -> reservacion.setPension(Pension.COMPLETA);
+                case 3 -> reservacion.setPension(Pension.MEDIA);
+                case 4 -> reservacion.setPension(Pension.DESAYUNO);
                 case 0 -> System.out.println("Volver al menu anterior");
                 default -> System.out.println("Opcion invalida");
             }
@@ -241,55 +246,71 @@ public class GestionReservas {
         }
     }
 
-    //region 8. Liquidar Sueldos
-    public void liquidarSueldosEnv() {
+
+    //region 8. Cobrar habitacion
+    int CalcularNoches(Reserva reservacion) {
+        LocalDateTime fechaIngreso = GestionCaja.stringALocalDate(reservacion.getFechaIngreso());
+        LocalDateTime fechaEgreso = GestionCaja.stringALocalDate(reservacion.getFechaEgreso());
+
+        Duration duration = Duration.between(fechaIngreso, fechaEgreso);
+        long noches = duration.toDays(); // Duracion en días
+
+        return (int) noches;
+    }
+
+
+
+     void cobrarHabitacionEnv(Reserva reservacion) {
         Caja cajita = GestionCaja.abrirCaja();
-        //deserializar la caja aca y en el pago de reservas.
+         //deserializo la caja aca y cobro las reservas.
+        GestionHotel gestionHotel = new GestionHotel();
+        int num= reservacion.getNroHabitacion();
+        Habitacion habitacion = gestionHotel.buscadorDeHabitaciones(num);
+        //traigo habitacion para ver el tipo y el valor
+        int coche=0;
+         if (habitacion.getCochera())
+             coche=20;
+         //veo si uso cochera
+        int noches= CalcularNoches(reservacion);
+        float total=(CalcularNoches(reservacion) * (habitacion.getTipo().getValor() + reservacion.getPension().getValor()+coche));
 
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Factura del Hotel");
-        System.out.println("----------------------------");
-        System.out.println("Total de empleados: " + contarEmpleados());
-        System.out.println("     Total a pagar: " + calcularSueldos() + "$");
-        System.out.println("----------------------------");
+        System.out.println("     Factura del Hotel");
+        System.out.println("----------------------------------");
+        System.out.println("     Habitacion nº: " + reservacion.getNroHabitacion());
+        System.out.println("Tipo de Habitacion: " + habitacion.getTipo().getTipo());
+        System.out.println("           Cochera: " + habitacion.getCochera());
+        System.out.println("           Pension: " + reservacion.getPension());
+        System.out.println("           Incluye: " + reservacion.getPension().getPension());
+        System.out.println("----------------------------------");
+        System.out.println("valor de habitacion " + habitacion.getTipo().getTipo() +": " + habitacion.getTipo().getValor()+"$");
+        System.out.println("valor de pension "+reservacion.getPension().getPension()+": " + reservacion.getPension().getValor()+"$");
+        if(habitacion.getCochera())
+            System.out.println("valor de cochera: 20$");
+        System.out.println("Cantidad de noches: " + noches);
+         System.out.println();
+         System.out.println("a pagar por noche: " + (habitacion.getTipo().getValor() + reservacion.getPension().getValor()) +coche+ "$");
+         System.out.println("----------------------------------");
+         System.out.println("TOTAL: " + total + "$");
+         System.out.println("Medio de pago : " + reservacion.getFormaPago());
         try{
-            System.out.println("Saldo de la caja: " + cajita.getSaldo() + "$");
-            if (cajita.getSaldo() >= calcularSueldos()) {
-                System.out.println("Desea Pagar sueldos a todos los empleados? (S/N)");
-                String respuesta = scan.nextLine();
-                if(respuesta.equalsIgnoreCase("S")){
-                    cajita.setEgreso(cajita.getEgreso() + calcularSueldos());
-                    cajita.setSaldo(cajita.getSaldo() - calcularSueldos());
+                    cajita.setIngreso(cajita.getIngreso() + total);
+                    cajita.setSaldo(cajita.getSaldo() + cajita.getIngreso());
                     cajita.setFecha(GestionCaja.localDateAString(LocalDateTime.now()));
-                    GestionCaja.imprimirCaja(cajita);
                     GestionCaja.cerrarCaja(cajita);
-                    LiquidarSueldos();
-                    System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-                    System.out.println("┃  Se ha liquidado el sueldo de todos los empleados  ┃");
-                    System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-                    //serializar la caja aca y en reserva pago
-                }
-            }else{
-                System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-                System.out.println("┃  No hay suficiente dinero en la caja para pagar los sueldos  ┃");
-                System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
-            }
+                    ImprimirFacturacion(reservacion, habitacion);
+                    System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+                    System.out.println("┃  Factura impresa Gracias por su visita  ┃");
+                    System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+                    //serializar la caja aca
+
         } catch (NullPointerException e) {
-            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-            System.out.println("┃  No hay caja para pagar los sueldos  ┃");
-            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  No hay caja donde abonar  ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }
         System.out.println(" ");
     }
-    float calcularSueldos(){
-        float total=0;
-        for (Empleado emp: listaEmpleados) {
-            total+=emp.getArea().getSueldo();
-        }
-        return total;
-    }
-    void LiquidarSueldos(){
+    void FacturarReserva(){
         LocalDate fechaLocal = LocalDate.now();
         for (Empleado emp: listaEmpleados) {
             String rutaArchivo = "src/main/resources/RecibosDeSueldo/Sueldo " + emp.getApellido() + "-" + emp.getNombre() + "-" + fechaLocal + ".txt";
@@ -297,7 +318,7 @@ public class GestionReservas {
         }
     }
 
-    void imprimirReciboDeSueldo(String rutaArchivo, Empleado empleado) {
+    void imprimirFactura(String rutaArchivo, Empleado empleado) {
 
         File file = new File(rutaArchivo);
         try {

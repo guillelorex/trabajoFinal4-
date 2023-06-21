@@ -116,7 +116,7 @@ public class GestionHotel {
             System.out.println(hab);
         }
     }
-    Habitacion buscadorDeHabitaciones(int numero){
+    public Habitacion buscadorDeHabitaciones(int numero){
         listaHabitaciones.sort(Comparator.comparingInt(Habitacion::getNumero));
         for (Habitacion hab : listaHabitaciones) {
             if (hab.getNumero() == numero) {

@@ -2,6 +2,7 @@ package org.grupoTP.clases.Hotel;
 
 import java.util.Scanner;
 
+import org.grupoTP.clases.Login.LoginUsuarios;
 import org.grupoTP.clases.Login.MenuLogueo;
 
 public class MenuHotel {
@@ -24,42 +25,42 @@ public class MenuHotel {
             switch (opcion) {
                 case 1 -> {
                     System.out.print("Mostrando Habitaciones");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.mostrarHabitacionesEnv();
                 }
                 case 2 -> {
                     System.out.print("Cargando Constructor de Habitaciones");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.agregarHabitacionEnv();
                 }
                 case 3 -> {
                     System.out.print("Buscando Habitaciones");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.buscarHabitacionEnv();
                 }
                 case 4 -> {
                     System.out.print("Llamando a Equipo de Mantenimiento");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.cambiarEstadoHabitacionEnv();
                 }
                 case 5 -> {
                     System.out.print("Cargando Equipo de Reformas");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.modificarHabitacionEnv();
                 }
                 case 6 -> {
                     System.out.print("Preparando cargas Explosivas");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.eliminarHabitacionEnv();
                 }
                 case 7 -> {
                     System.out.print("Calculando datos");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                     gestionHotel.estadisticasHotelEnv();
                 }
                 case 0 -> {
                     System.out.print("Volviendo al Menu Administración");
-                    MenuLogueo.retraso();
+                    LoginUsuarios.retraso();
                 }
                 default -> System.out.println("Opción invalida");
             }

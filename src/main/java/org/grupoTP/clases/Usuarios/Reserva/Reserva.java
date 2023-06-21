@@ -15,8 +15,7 @@ public class Reserva extends Persona implements Serializable{
     private clienteEstado estado;
     public enum clienteTipo {HUESPED, CONVENCION, VIP, TOUR, JUBILADO};
     private clienteTipo tipo;
-    public enum pension{ALLINCLUSIVE, COMPLETA, MEDIA, DESAYUNO};
-    private pension pension;
+    private Pension pension;
     public enum formaPago{EFECTIVO, TARJETA, PLAN};     //PUEDE IR EN FACTURACION?
     private formaPago formaPago;
 
@@ -24,7 +23,7 @@ public class Reserva extends Persona implements Serializable{
 
     public Reserva(){}
 
-    public Reserva(String dni, String password, String mail, String nombre, String apellido, Persona.TipoCuenta tipoCuenta, int nroHabitacion, int nroReserva, String fechaIngreso, String fechaEgreso, clienteEstado estado, clienteTipo tipo, Reserva.pension pension, Reserva.formaPago formaPago) {
+    public Reserva(String dni, String password, String mail, String nombre, String apellido, Persona.TipoCuenta tipoCuenta, int nroHabitacion, int nroReserva, String fechaIngreso, String fechaEgreso, clienteEstado estado, clienteTipo tipo, Pension pension, Reserva.formaPago formaPago) {
         super(dni, password, mail, nombre, apellido, tipoCuenta);
         this.nroHabitacion = nroHabitacion;
         this.nroReserva = nroReserva;
@@ -80,11 +79,11 @@ public class Reserva extends Persona implements Serializable{
         this.tipo = tipo;
     }
 
-    public Reserva.pension getPension() {
+    public Pension getPension() {
         return pension;
     }
 
-    public void setPension(Reserva.pension pension) {
+    public void setPension(Pension pension) {
         this.pension = pension;
     }
 
