@@ -11,8 +11,6 @@ import org.grupoTP.clases.Usuarios.Reserva.Reserva;
 
 
 import java.util.List;
-import java.io.Console;
-
 
 public class LoginUsuarios {
 
@@ -64,7 +62,7 @@ public class LoginUsuarios {
     }
     //endregion
 
-    //region 4. Retraso y Passwords
+    //region 4. Retraso
     public static void retraso(){
         try{
             for (int i = 0; i < 5; i++) {
@@ -76,49 +74,7 @@ public class LoginUsuarios {
             System.out.println(e);
         }
     }
-
-    public static char[] readPassword() {
-        Console console = System.console();
-        if (console == null) {
-            System.out.println("No se puede obtener la consola.");
-            System.exit(1);
-        }
-
-        char[] password = new char[100];
-        int i = 0;
-
-        System.out.print("Ingrese su contraseña: ");
-
-        while (true) {
-            char c = console.readPassword()[0];
-
-            if (c == '\r' || c == '\n') {
-                System.out.println();
-                break;
-            }
-
-            if (c != '\b') {
-                password[i] = c;
-                i++;
-                System.out.print("*");
-            } else {
-                if (i > 0) {
-                    i--;
-                    System.out.print("\b \b");
-                }
-            }
-        }
-
-        char[] trimmedPassword = new char[i];
-        System.arraycopy(password, 0, trimmedPassword, 0, i);
-
-        return trimmedPassword;
-    }
-
     //endregion
-
-    // lo que hay que hacer es si es valida la cuenta es decir busco el usuario en la lista si lo encuentro, tengo que saber si la contraseña ingresada
-    // es la misma que la que esta en el repositorio, SI ES ASI, tengo que saber si es admin, reserva o empleado, si es admin, lo mando al menu admin, si es empleado
 }
 
 

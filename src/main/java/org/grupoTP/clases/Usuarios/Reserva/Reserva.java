@@ -11,12 +11,12 @@ public class Reserva extends Persona implements Serializable{
     private int nroReserva;
     private String fechaIngreso;
     private String fechaEgreso;
-    public enum clienteEstado {RESERVADO, INGRESADO, EGRESADO} ;
+    public enum clienteEstado {RESERVADO, INGRESADO, EGRESADO}
     private clienteEstado estado;
-    public enum clienteTipo {HUESPED, CONVENCION, VIP, TOUR, JUBILADO};
+    public enum clienteTipo {HUESPED, CONVENCION, VIP, TOUR, JUBILADO}
     private clienteTipo tipo;
     private Pension pension;
-    public enum formaPago{EFECTIVO, TARJETA, PLAN};     //PUEDE IR EN FACTURACION?
+    public enum formaPago{EFECTIVO, TARJETA, PLAN}
     private formaPago formaPago;
 
     //region constructores

@@ -41,13 +41,15 @@ public class GestionEmpleados {
 
         emp = crearEmpleado();
 
-        agregarAListaEmpleado(emp);
+        if(agregarAListaEmpleado(emp)){
         personal.agregar(emp);
-
         personalASCIIHorario(listaEmpleados);
         System.out.println(emp);
         System.out.println("Empleado inscripto con éxito");
         System.out.println("----------------------------");
+        }else{
+            System.out.println("Ese legajo ya existe");
+        }
     }
 
     Empleado crearEmpleado() {
@@ -133,12 +135,13 @@ public class GestionEmpleados {
     }
 
     //agrego a la lista
-    void agregarAListaEmpleado(Empleado emp){
+    boolean agregarAListaEmpleado(Empleado emp){
 
         if(!this.listaEmpleados.contains(emp)){
             this.listaEmpleados.add(emp);
+            return true;
         }
-
+        return false;
     }
     //endregion
 
@@ -295,7 +298,7 @@ public class GestionEmpleados {
         }else {
             personalASCIIBuscar(listaEmpleados, emp);
 
-            System.out.println("precione 'd' para despedir o cualquier letra para cancelar");
+            System.out.println("Precione 'd' para despedir o cualquier letra para cancelar");
             String opcion = scan.nextLine();
             if (opcion.equals("d") || opcion.equals("D")) {
 

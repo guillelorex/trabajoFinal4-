@@ -2,7 +2,6 @@ package org.grupoTP.clases.Usuarios.Admin;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 public class Caja implements Serializable{
 

@@ -31,13 +31,16 @@ public class GestionHotel {
         hotelASCIIBuscar(listaHabitaciones, null);
 
         hab = crearHabitacion();
-        agregarAListaHabitacion(hab);
-        hotel.agregar(hab);
+        if(agregarAListaHabitacion(hab)){
+            hotel.agregar(hab);
+            hotelASCIIBuscar(listaHabitaciones, hab);
+            System.out.println(hab);
+            System.out.println("Habitación agregada con éxito");
+            System.out.println("-----------------------------");
+        }else {
+            System.out.println("La habitacion ya existe");
+        }
 
-        hotelASCIIBuscar(listaHabitaciones, hab);
-        System.out.println(hab);
-        System.out.println("Habitación agregada con éxito");
-        System.out.println("-----------------------------");
     }
 
     Habitacion crearHabitacion() {
@@ -88,12 +91,13 @@ public class GestionHotel {
     }
 
     //agrego a la lista
-    void agregarAListaHabitacion(Habitacion hab){
+    boolean agregarAListaHabitacion(Habitacion hab){
 
         if(!this.listaHabitaciones.contains(hab)){
             this.listaHabitaciones.add(hab);
+            return true;
         }
-
+        return false;
     }
     //endregion
 
@@ -156,7 +160,7 @@ public class GestionHotel {
             System.out.println("-------------------------------");
         }
     }
-     void cambiarEstado(Habitacion habitacion){
+     public void cambiarEstado(Habitacion habitacion){
 
        Scanner scan = new Scanner(System.in);
        int opcion;
@@ -242,7 +246,9 @@ public class GestionHotel {
             System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         }else{
             hotelASCIIBuscar(listaHabitaciones,hab);
-            System.out.println("precione 'b' para borrar o cualquier letra para cancelar");
+
+            scan.nextLine();
+            System.out.println("Precione 'b' para borrar o cualquier letra para cancelar");
             String opcion=scan.nextLine();
             if(opcion.equals("b") || opcion.equals("B")) {
 
