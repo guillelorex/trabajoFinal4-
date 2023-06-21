@@ -1,0 +1,73 @@
+[ {
+  "numero" : 11,
+  "piso" : 1,
+  "tipo" : "DOB",
+  "cochera" : true,
+  "estado" : "DISPONIBLE"
+}, {
+  "numero" : 12,
+  "piso" : 1,
+  "tipo" : "SIM",
+  "cochera" : false,
+  "estado" : "DISPONIBLE"
+}, {
+  "numero" : 13,
+  "piso" : 1,
+  "tipo" : "DOB",
+  "cochera" : false,
+  "estado" : "DISPONIBLE"
+}, {
+  "numero" : 14,
+  "piso" : 1,
+  "tipo" : "SIM",
+  "cochera" : false,
+  "estado" : "FUERA_SERVICIO"
+}, {
+  "numero" : 21,
+  "piso" : 2,
+  "tipo" : "TRI",
+  "cochera" : false,
+  "estado" : "OCUPADA"
+}, {
+  "numero" : 22,
+  "piso" : 2,
+  "tipo" : "TRI",
+  "cochera" : true,
+  "estado" : "OCUPADA"
+}, {
+  "numero" : 23,
+  "piso" : 2,
+  "tipo" : "TRI",
+  "cochera" : true,
+  "estado" : "DISPONIBLE"
+}, {
+  "numero" : 24,
+  "piso" : 2,
+  "tipo" : "TRI",
+  "cochera" : false,
+  "estado" : "MANTENIMIENTO"
+}, {
+  "numero" : 31,
+  "piso" : 3,
+  "tipo" : "SUI",
+  "cochera" : false,
+  "estado" : "RESERVADA"
+}, {
+  "numero" : 32,
+  "piso" : 3,
+  "tipo" : "DOB",
+  "cochera" : false,
+  "estado" : "OCUPADA"
+}, {
+  "numero" : 33,
+  "piso" : 3,
+  "tipo" : "DOB",
+  "cochera" : false,
+  "estado" : "DISPONIBLE"
+}, {
+  "numero" : 34,
+  "piso" : 3,
+  "tipo" : "SUI",
+  "cochera" : false,
+  "estado" : "RESERVADA"
+} ]
