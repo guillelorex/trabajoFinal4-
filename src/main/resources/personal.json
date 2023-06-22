@@ -21,17 +21,6 @@
   "horario" : "TARDE",
   "estado" : "VACACIONES"
 }, {
-  "dni" : "223456321",
-  "password" : "1234",
-  "mail" : "ana_gomez@gmail.com",
-  "nombre" : "Ana",
-  "apellido" : "Gomez",
-  "tipoCuenta" : "EMPLEADO",
-  "legajo" : 2,
-  "area" : "COCINA",
-  "horario" : "MANANA",
-  "estado" : "ACTIVO"
-}, {
   "dni" : "98765432",
   "password" : "4321",
   "mail" : "juan_perez@gmail.com",
@@ -259,7 +248,7 @@
   "apellido" : "Mendez",
   "tipoCuenta" : "EMPLEADO",
   "legajo" : 23,
-  "area" : "VALETPARKING",
-  "horario" : "TARDE",
-  "estado" : "BAJA"
+  "area" : "MOZOS",
+  "horario" : "NOCHE",
+  "estado" : "ACTIVO"
 } ]

@@ -53,6 +53,7 @@ public class GestionReservas {
         Reserva res;
         Scanner scan = new Scanner(System.in);
         gestionHotel.hotelASCIIEstado(listaHabitaciones);
+        listarReservas();
 
         res = crearReserva(); // tengo que saber que no existe.
         if(agregarAListaReserva(res)){
@@ -615,4 +616,5 @@ public class GestionReservas {
             throw new RuntimeException(e);
         }
     }
+    //endregion
 }

@@ -51,9 +51,7 @@ public class Reserva extends Persona implements Serializable{
         return nroReserva;
     }
 
-    public void setNroReserva(int nroReserva) {
-        this.nroReserva = nroReserva;
-    }
+    public void setNroReserva(int nroReserva) {this.nroReserva = nroReserva;}
 
     public String getFechaIngreso() {return fechaIngreso;}
 
@@ -101,20 +99,21 @@ public class Reserva extends Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Reserva{" +'\'' +
-                "nroHabitacion=" + nroHabitacion +'\'' +
-                ", nroReserva=" + nroReserva +'\'' +
+        return " Reserva -> " + '\'' +
+                "nroHabitacion=" + nroHabitacion + '\'' +
+                ", nroReserva=" + nroReserva + '\'' +
                 ", fechaIngreso='" + fechaIngreso + '\'' +
                 ", fechaEgreso='" + fechaEgreso + '\'' +
-                ", estado=" + estado +
-                ", tipo=" + tipo +
-                ", pension=" + pension +
-                ", formaPago=" + formaPago +
+                ", estado=" + estado + '\'' +
+                ", tipo=" + tipo + '\'' +
+                ", pension=" + pension + '\'' +
+                ", formaPago=" + formaPago + '\'' +
                 ", dni='" + dni + '\'' +
                 ", password='" + password + '\'' +
                 ", mail='" + mail + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
+                ", tipoCuenta=" + tipoCuenta + " " +
                 '}';
     }
 

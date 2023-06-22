@@ -57,9 +57,42 @@ public class LoginUsuarios {
         switch (emp.getTipoCuenta()) {
             case ADMINISTRADOR -> menuAdmin.suuitchAdmin();
             case RECEPCION -> menuReservas.suuitchReservas();
-            case EMPLEADO -> System.out.println(emp);
+            case EMPLEADO -> muestraEmpleado(emp);
         }
     }
+    //endregion
+
+    //region 4. fichas
+    void muestraEmpleado(Empleado emp){
+        System.out.println("Legajo: "+ emp.getLegajo());
+        System.out.println("Nombre: "+ emp.getNombre());
+        System.out.println("Apellido: "+ emp.getApellido());
+        System.out.println("DNI: "+ emp.getDni());
+        System.out.println("Mail: "+ emp.getMail());
+        System.out.println(" ");
+        System.out.println("Area: "+ emp.getArea());
+        System.out.println("Horario: "+ emp.getHorario());
+        System.out.println("Estado: "+ emp.getEstado());
+        System.out.println(" ");
+    }
+
+    void muestraReserva(Reserva res){
+        System.out.println("Reserva: "+ res.getNroReserva());
+        System.out.println("Nombre: "+ res.getNombre());
+        System.out.println("Apellido: "+ res.getApellido());
+        System.out.println("DNI: "+ res.getDni());
+        System.out.println("Mail: "+ res.getMail());
+        System.out.println(" ");
+        System.out.println("numero de habitacion: "+ res.getNroHabitacion());
+        System.out.println("Fecha de ingreso: "+ res.getFechaIngreso());
+        System.out.println("Fecha de egreso: "+ res.getFechaEgreso());
+        System.out.println("Estado: "+ res.getEstado());
+        System.out.println("Tipo: "+ res.getTipo());
+        System.out.println("Pension: "+ res.getPension());
+        System.out.println("Forma de pago: "+ res.getFormaPago());
+        System.out.println(" ");
+    }
+
     //endregion
 
     //region 4. Retraso

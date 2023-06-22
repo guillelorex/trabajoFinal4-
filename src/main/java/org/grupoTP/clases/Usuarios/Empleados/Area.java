@@ -28,10 +28,10 @@ public enum Area {
 
     @Override
     public String toString(){
-        return "Area{" +
+        return "Area (" +
                 "cargo='" + cargo + '\'' +
                 ", sueldo=" + sueldo +'\'' +
-                '}';
+                ')';
     }
 
 }

@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="unido todo lo de reserva y corregido, tambien se cobran reservas.">
+    <list default="true" id="7a2db25b-38ec-4ace-915b-98e9f39183f1" name="Changes" comment="mas testeos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/LoginUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/LoginUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Login/MenuLogueo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/Area.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/Empleado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Empleados/GestionEmpleados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/GestionReservas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/MenuReservas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/grupoTP/clases/Usuarios/Reserva/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Libros/caja.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Libros/caja.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/caja.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/caja.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hotel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hotel.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/personal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/personal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/reservas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/reservas.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687378291858</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mas testeos">
+      <created>1687381918823</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687381918823</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,7 +122,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="caja hecho falta liquidar habitacion" />
     <MESSAGE value="unido todo lo de reserva y corregido, tambien se cobran reservas." />
-    <option name="LAST_COMMIT_MESSAGE" value="unido todo lo de reserva y corregido, tambien se cobran reservas." />
+    <MESSAGE value="mas testeos" />
+    <option name="LAST_COMMIT_MESSAGE" value="mas testeos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -71,9 +71,9 @@ public class GestionEmpleados {
         System.out.print("\n Ingrese el Legajo: ");
         legajo = scan.nextInt();
         if(buscardorDeEmpleado(legajo) != null){
-            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-            System.out.println("┃  La habitación ya existe ┃");
-            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            System.out.println("┃  El empleado ya existe ┃");
+            System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━┛");
             return null;
         }
         scan.nextLine(); //limpia el buffer
@@ -261,7 +261,9 @@ public class GestionEmpleados {
         else{
             System.out.println(emp);
 
-            personal.eliminar(emp.getLegajo()); //elimino el empleado de la lista y lo vuelvo a agregar por sí se modificó el legajo.
+
+            listaEmpleados.remove(emp);     //elimino el empleado de la lista y lo vuelvo a agregar por sí se modificó el legajo.
+            personal.eliminar(emp.getLegajo());
             emp=crearEmpleado();                //lo debo eliminar primero porque si agrego algo ya contenido, no lo agrega.
             agregarAListaEmpleado(emp);
             personal.agregar(emp);

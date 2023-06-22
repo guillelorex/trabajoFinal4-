@@ -52,9 +52,11 @@ public class MenuLogueo {
                 do {
                     System.out.print("\nIngrese su contraseña  o '0' para salir: ");
                     contrasena = scan.nextLine();
+                    if (contrasena.equals("0"))
+                        break; // Salir del bucle si se ingresa '0'
                     contrasenaCorrecta = login.checkContrasenaReserva(reservaEncontrada, contrasena);
 
-                    if (!contrasenaCorrecta && !contrasena.equals("0")) {
+                    if (!contrasenaCorrecta) {
                         System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━┓");
                         System.out.println("┃  Contraseña Incorrecta  ┃");
                         System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━┛");
@@ -63,9 +65,9 @@ public class MenuLogueo {
                         System.out.println("  ");
                         System.out.print("Contraseña correcta. Ingresando al sistema");
                         LoginUsuarios.retraso();
-                        System.out.println(reservaEncontrada);
+                        login.muestraReserva(reservaEncontrada);
                     }
-                } while (!contrasenaCorrecta || !contrasena.equals("0"));
+                } while (!contrasenaCorrecta);
             } else {
                 System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━┓");
                 System.out.println("┃  Usuario Incorrecto  ┃");

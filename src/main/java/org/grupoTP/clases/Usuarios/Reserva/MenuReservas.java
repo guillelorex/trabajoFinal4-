@@ -10,6 +10,9 @@ public class MenuReservas {
     GestionReservas gestionReservas = new GestionReservas();
     GestionHotel gestionHotel = new GestionHotel();
 
+    //CONSTRUCTOR
+    public MenuReservas() {}
+
     public void suuitchReservas(){
         Scanner scan=new Scanner(System.in);
         int opcion;

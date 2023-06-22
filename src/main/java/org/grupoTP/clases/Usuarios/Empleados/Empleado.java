@@ -67,7 +67,7 @@ public class Empleado extends Persona implements Serializable{
 
     @Override
     public String toString() {
-        return "Empleado{" + '\'' +
+        return " Empleado -> " + '\'' +
                 "legajo=" + legajo + '\'' +
                 ", area=" + area + '\'' +
                 ", horario=" + horario + '\'' +
@@ -77,8 +77,11 @@ public class Empleado extends Persona implements Serializable{
                 ", mail='" + mail + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
+                ", tipoCuenta=" + tipoCuenta + " " +
                 '}';
     }
+
+
     //endregion
 
     //region equals and hashCode
